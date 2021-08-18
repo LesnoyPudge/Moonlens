@@ -1,0 +1,593 @@
+<% layout('./layout/mainPage') -%>
+<% block('title', 'Moonlens'); -%>
+
+<main class="main">
+    <div class="container">
+        <section class="our-clients">
+
+            <h2 class="our-clients__title">
+                Ночные линзы MoonLens - коррекция зрения <br> во время сна для 100% зрения днем
+            </h2>
+            <h3 class="our-clients__section-title section-title">
+                Кому подойдут MoonLens?
+            </h3>
+
+            <div class="our-clients__preview">
+
+                <div class="preview-item">
+                    <picture class="preview-item__image">
+                        <source srcset="images/preview__image1.webp" type="image/webp">
+                        <img src="images/preview__image1.png" alt="preview__image1" class="image">
+                    </picture>
+                    <h5 class="preview-item__title">
+                        Пациенты от 6 лет до 60 лет
+                    </h5>
+                    <p class="preview-item__text">
+                        с близорукость до -7,00 диоптрий <br> без или с астигматизмом до -4,00 диоптрий
+                    </p>
+                </div>
+
+                <div class="preview-item">
+                    <picture class="preview-item__image">
+                        <source srcset="images/preview__image2.webp" type="image/webp">
+                        <img src="images/preview__image2.png" alt="preview__image2" class="image">
+                    </picture>
+                    <h5 class="preview-item__title">
+                        Дети и подростки
+                    </h5>
+                    <p class="preview-item__text">
+                        с целью торможения прогрессирования близорукости
+                    </p>
+                </div>
+
+                <div class="preview-item">
+                    <picture class="preview-item__image">
+                        <source srcset="images/preview__image3.webp" type="image/webp">
+                        <img src="images/preview__image3.png" alt="preview__image3" class="image">
+                    </picture>
+                    <h5 class="preview-item__title">
+                        Взрослые пациенты
+                    </h5>
+                    <p class="preview-item__text">
+                        с непереносимостью мягких линз, противопоказания к лазерной коррекции, а также в силу
+                        специфики профессии
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <section class="info-bar">
+        <div class="container">
+            <p class="info-bar__text">
+                Остановка прогрессирования близорукости<br>происходит у 60%-90% детей и подростков!
+            </p>
+
+            <img class="info-bar__eye" src="images/info-bar__eye.svg" alt="info-bar__eye" id="info-bar__eye-1">
+            <img class="info-bar__eye" src="images/info-bar__eye.svg" alt="info-bar__eye" id="info-bar__eye-2">
+            <img class="info-bar__eye" src="images/info-bar__eye.svg" alt="info-bar__eye" id="info-bar__eye-3">
+            <img class="info-bar__eye" src="images/info-bar__eye.svg" alt="info-bar__eye" id="info-bar__eye-4">
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="how-it-works">
+            <picture class="how-it-works__image">
+                <source srcset="images/how-it-works__image.webp" type="image/webp">
+                <img src="images/how-it-works__image.png" alt="how-it-works__image" class="image">
+            </picture>
+            <div class="how-it-works__content">
+                <h3 class="how-it-works__section-title section-title">
+                    Как работают ночные линзы MoonLens?
+                </h3>
+                <ul class="how-it-works__list list">
+                    <li class="list__item">
+                        Ночные линзы изменяют форму самого верхнего слоя эпителия роговицы.
+                    </li>
+                    <li class="list__item">
+                        Перед сном пациент надевает ночные линзы и спит в них не менее 6-8 часов, в течение которых
+                        под
+                        закрытыми веками роговица принимает форму линзы.
+                    </li>
+                    <li class="list__item">
+                        Задняя поверхность линзы Мунленз сконструирована таким образом, чтобы слезный слой под
+                        линзой
+                        распределялся
+                        неравномерно. Это ведет к возникновению разности капиллярных сил и изменению формы передней
+                        поверхности роговицы
+                        расчетным образом и на заданную величину. При этом очень важно, что линза не касается
+                        роговицы!
+                    </li>
+                    <li class="list__item">
+                        Утром, после снятия MoonLens, роговица сохраняет форму линзы в течение 24 часов. В это время
+                        зрение
+                        достигает 100% и не
+                        нужно надевать очки или дневные линзы!
+                    </li>
+                </ul>
+                <a href="#" class="how-it-works__more-info more-info-button">
+                    Подробнее о линзах MoonLens
+                </a>
+            </div>
+        </section>
+
+        <section class="advantages">
+            <div class="advantages__item">
+                <picture class="advantages__image">
+                    <source srcset="images/advantages__image1.webp" type="image/webp">
+                    <img src="images/advantages__image1.svg" alt="advantages__image1" class="">
+                </picture>
+                <div class="advantages__title">
+                    Удобны<br>при ношении
+                </div>
+                <p class="advantages__text">
+                    Уникальные край линзы Мунленз делает ношение линзы более комфортным. Пациенты<br>не чувствуют
+                    линзы во время сна
+                </p>
+            </div>
+            <div class="advantages__item">
+                <picture class="advantages__image">
+                    <source srcset="images/advantages__image2.webp" type="image/webp">
+                    <img src="images/advantages__image2.png" alt="advantages__image2" class="">
+                </picture>
+                <div class="advantages__title">
+                    Простота ухода<br>и использования
+                </div>
+                <p class="advantages__text">
+                    Мунленз легко надеть и снять. Уход за линзами не отличается<br>от ухода за другими ЖКЛ линзами
+                </p>
+            </div>
+            <div class="advantages__item">
+                <picture class="advantages__image">
+                    <source srcset="images/advantages__image3.webp" type="image/webp">
+                    <img src="images/advantages__image3.png" alt="advantages__image3" class="">
+                </picture>
+                <div class="advantages__title">
+                    Длительный срок службы
+                </div>
+                <p class="advantages__text">
+                    Линзы носятся 1 год, по истечении года требуется замена на новую пару линз
+                </p>
+            </div>
+            <div class="advantages__item">
+                <picture class="advantages__image">
+                    <source srcset="images/advantages__image4.webp" type="image/webp">
+                    <img src="images/advantages__image4.png" alt="advantages__image4" class="">
+                </picture>
+                <div class="advantages__title">
+                    Эффект<br>обратимый
+                </div>
+                <p class="advantages__text">
+                    При прекращении ношении Мунленз зрение возвращается<br>в исходное состояние и можно выбрать
+                    альтернативный способ коррекции
+                    зрения
+                </p>
+            </div>
+        </section>
+
+        <section class="leader">
+            <div class="leader__content">
+                <h3 class="leader__section-title section-title">
+                    Moonlens – лидер индустрии
+                </h3>
+                <ul class="leader__list list">
+                    <li class="list__item">
+                        разработаны ведущей американской компанией KATT Design Group Inc.<br>под руководством
+                        легендарного
+                        ученного Джона Маунтфорда
+                    </li>
+                    <li class="list__item">
+                        новейшая разработка, которая воплотила в себе лучшие практики<br>в ортокератолигии за
+                        последние
+                        20 лет.
+                    </li>
+                    <li class="list__item">
+                        применяются более чем в 50 странах<br>Северной Америки, Европы, Азии, Австралии.
+                    </li>
+                    <li class="list__item">
+                        Разрешены FDA для серийного применения в США.
+                    </li>
+                </ul>
+                <a href="#" class="leader__more-info more-info-button">
+                    Подробнее о создателях MoonLens
+                </a>
+            </div>
+
+            <picture class="leader__image">
+                <source srcset="images/leader__image.webp" type="image/webp">
+                <img src="images/leader__image.png" alt="leader__image" class="image">
+            </picture>
+        </section>
+    </div>
+
+    <section class="info-bar">
+        <div class="container">
+            <p class="info-bar__text">
+                Изготавливаются как серийно, так и индивидуально<br>под конкретного пациента при нестандартных
+                случаях
+            </p>
+
+            <img class="info-bar__eye" src="images/info-bar__eye.svg" alt="info-bar__eye" id="info-bar__eye-5">
+            <img class="info-bar__eye" src="images/info-bar__eye.svg" alt="info-bar__eye" id="info-bar__eye-6">
+            <img class="info-bar__eye" src="images/info-bar__eye.svg" alt="info-bar__eye" id="info-bar__eye-7">
+            <img class="info-bar__eye" src="images/info-bar__eye.svg" alt="info-bar__eye" id="info-bar__eye-8">
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="safety">
+            <div class="safety__images">
+                <picture class="safety__image" id="safety__image-1">
+                    <source srcset="images/safety__image1.webp" type="image/webp">
+                    <img src="images/safety__image1.png" alt="safety__image1" class="image">
+                </picture>
+                <picture class="safety__image" id="safety__image-2">
+                    <source srcset="images/safety__image2.webp" type="image/webp">
+                    <img src="images/safety__image2.png" alt="safety__image2" class="image">
+                </picture>
+                <picture class="safety__image" id="safety__image-3">
+                    <source srcset="images/safety__image3.webp" type="image/webp">
+                    <img src="images/safety__image3.png" alt="safety__image3" class="image">
+                </picture>
+                <picture class="safety__image" id="safety__image-4">
+                    <source srcset="images/safety__image4.webp" type="image/webp">
+                    <img src="images/safety__image4.png" alt="safety__image4" class="image">
+                </picture>
+            </div>
+            <div class="safety__content">
+                <h3 class="safety__section-title section-title">
+                    Moonlens – эффективны<br>и безопасны
+                </h3>
+                <ul class="safety__list list">
+                    <li class="list__item">
+                        Благодаря уникальному запатентованному дизайну TLD (Tier Layer Design) MoonLens:
+                    </li>
+                    <li class="list__item">
+                        Прошли длительные клинические испытания в Тихоокеанском Университете Оптометрии (США), и
+                        подтвердили
+                        соответствие строгим стандартам высокой эффективности и безопасности.
+                    </li>
+                    <li class="list__item">
+                        Изготавливаются как серийно, так индивидуально под конкретного пациента при нестандартных
+                        случаях
+                    </li>
+                </ul>
+                <a href="#" class="safety__more-info-button more-info-button">
+                    Подробнее о линзах MoonLens
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <section class="info-bar-advantages">
+        <div class="container">
+            <div class="info-bar-advantages__content">
+                <div class="info-bar-advantages__item">
+                    <img src="images/info-bar-advantages__image1.svg" alt="info-bar-advantages__image1"
+                        class="info-bar-advantages__image">
+                    <p class="info-bar-advantages__text">
+                        Более деликатно и безопасно воздействуют на роговицы, при этом не касаясь её
+                    </p>
+                </div>
+                <div class="info-bar-advantages__item">
+                    <img src="images/info-bar-advantages__image2.svg" alt="info-bar-advantages__image2"
+                        class="info-bar-advantages__image">
+                    <p class="info-bar-advantages__text">
+                        Эффективно корректируют зрение во время сна, которого хватает на весь следующий день
+                    </p>
+                </div>
+                <div class="info-bar-advantages__item">
+                    <img src="images/info-bar-advantages__image3.svg" alt="info-bar-advantages__image3"
+                        class="info-bar-advantages__image">
+                    <p class="info-bar-advantages__text">
+                        Замедляют, а в ряде случаев останавливают развитие близорукости у подростков
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="materials">
+            <div class="materials__content">
+                <h3 class="materials__section-title section-title">
+                    Лучшие газопроницаемые материалы
+                </h3>
+                <ul class="materials__list list">
+                    <li class="list__item">
+                        Используются лучшие материалы для производства контактных линз с кислородопроницаемостью от
+                        100 Dk до 200 Dk
+                    </li>
+                    <li class="list__item">
+                        Может использоваться разный цвет для левого и правого глаза для более удобного пользования
+                    </li>
+                    <li class="list__item">
+                        Выбор материала не влияет на стоимость линзы!
+                    </li>
+                </ul>
+                <a href="#" class="materials__more-info-button more-info-button">
+                    Подробнее о материалах
+                </a>
+            </div>
+            <div class="materials__links links">
+                <a href="#" class="links__item">
+                    <div class="links__title">
+                        Boston® XO / XO2
+                    </div>
+                    <p class="links__subtitle">
+                        Bausch Health Inc., США
+                    </p>
+                </a>
+                <a href="#" class="links__item">
+                    <div class="links__title">
+                        Optimum® Extra / Extreme / Infinite
+                    </div>
+                    <p class="links__subtitle">
+                        Contamac Inc., Великобритания
+                    </p>
+                </a>
+                <a href="#" class="links__item">
+                    <div class="links__title">
+                        Paragon® HDS
+                    </div>
+                    <p class="links__subtitle">
+                        Paragon Vision Sciences Inc., США
+                    </p>
+                </a>
+                <a href="#" class="links__item">
+                    <div class="links__title">
+                        Acuity® 100 / 200
+                    </div>
+                    <p class="links__subtitle">
+                        Acuity Polymers Inc., США
+                    </p>
+                </a>
+            </div>
+            <picture class="materials__image">
+                <source srcset="images/materials__image.webp" type="image/webp">
+                <img src="images/materials__image.png" alt="materials__image" class="image">
+            </picture>
+        </section>
+
+        <section class="professionals">
+            <picture class="professionals__image">
+                <source srcset="images/professionals__image.webp" type="image/webp">
+                <img src="images/professionals__image.png" alt="professionals__image" class="image">
+            </picture>
+
+            <div class="professionals__content">
+                <h3 class="professionals__section-title section-title">
+                    Профессионализм на 5+
+                </h3>
+
+                <ul class="professionals__list list">
+                    <li class="list__item">
+                        Подбор Мунленз и наблюдение пациента проводится обученными и сертифицированными врачами
+                        офтальмологами
+                    </li>
+                    <li class="list__item">
+                        Куда бы вы не обратились за приобретением или подбором линз — с ВАМИ будут работать
+                        ПРОФЕССИОНАЛЫ
+                    </li>
+                    <li class="list__item">
+                        Производятся всего в нескольких высокотехнологичных лабораториях во всем мире с внедренной
+                        системой
+                        менеджмента качества
+                        ISO 13 485
+                    </li>
+                    <li class="list__item">
+                        Имеют все разрешительные документы для применения в Вашей стране
+                    </li>
+                    <li class="list__item">
+                        Каждая линза проходит сплошной контроль качества
+                    </li>
+                </ul>
+
+                <a href="#" class="professionals-choose-button choose-button button">
+                    Выбрать клинику
+                </a>
+            </div>
+        </section>
+
+        <section class="recommendation">
+            <h3 class="recommendation__title">
+                Рекомендации врачей
+            </h3>
+            <div class="recommendation__slider slider">
+                <div class="slider__item">
+                    <div class="slider__content">
+                        <span class="slider__bg-circle bg-circle"></span>
+                        <div class="slider__header">
+                            <picture class="slider__image">
+                                <source srcset="images/recommendation__image1.webp" type="image/webp">
+                                <img src="images/recommendation__image1.png" alt="recommendation__image1" class="">
+                            </picture>
+                            <div class="slider__name">
+                                <h5 class="slider__title">
+                                    Анна
+                                </h5>
+                                <p class="slider__subtitle">
+                                    Хирург
+                                </p>
+                            </div>
+                        </div>
+                        <p class="slider__text">
+                            Quis occaecat id mollit sint est ex magna proident pariatur reprehenderit excepteur
+                            officia dolor. Cillum officia
+                            deserunt commodo Lorem. Esse nulla elit eu laboris deserunt non elit deserunt. Culpa
+                            Lorem aliquip in elit duis occaecat
+                            ipsum. Incididunt laborum deserunt ad sint deserunt commodo irure incididunt minim...
+                        </p>
+                    </div>
+
+                    <div class="slider__video video">
+                        <picture class="video__image">
+                            <source srcset="images/video__image1.webp" type="image/webp">
+                            <img src="images/video__image1.png" alt="video__image1" class="">
+                        </picture>
+                        <div class="video__content">
+                            <div class="video__play-button play-button">
+                                <img src="images/video__play-button.svg" alt="" class="play-button__icon">
+                            </div>
+                            <div class="video__name">
+                                <h5 class="video__title">
+                                    Анна
+                                </h5>
+                                <p class="video__subtitle">
+                                    Хирург
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="FAQ">
+            <h3 class="FAQ__section-title section-title">
+                Часто задаваемые вопросы
+            </h3>
+
+            <div class="FAQ__questions questions">
+                <div class="questions__col">
+
+                    <div class="questions__item">
+                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
+                        <div class="questions__content">
+                            <p class="questions__title">
+                                Кто разработал дизайны линз?
+                            </p>
+
+                            <p class="questions__text">
+                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
+                                руководством
+                                легендарного учёного
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
+                        <div class="questions__content">
+                            <p class="questions__title">
+                                Кто разработал дизайны линз?
+                            </p>
+
+                            <p class="questions__text">
+                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
+                                руководством
+                                легендарного учёного
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
+                        <div class="questions__content">
+                            <p class="questions__title">
+                                Кто разработал дизайны линз?
+                            </p>
+
+                            <p class="questions__text">
+                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
+                                руководством
+                                легендарного учёного
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="questions__col">
+
+                    <div class="questions__item">
+                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
+                        <div class="questions__content">
+                            <p class="questions__title">
+                                Кто разработал дизайны линз?
+                            </p>
+
+                            <p class="questions__text">
+                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
+                                руководством
+                                легендарного учёного
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
+                        <div class="questions__content">
+                            <p class="questions__title">
+                                Кто разработал дизайны линз?
+                            </p>
+
+
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
+                        <div class="questions__content">
+                            <p class="questions__title">
+                                Кто разработал дизайны линз?
+                            </p>
+
+                            <p class="questions__text">
+                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
+                                руководством
+                                легендарного учёного
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a href="#" class="FAQ__more-info-button more-info-button">
+                Задать свой вопрос
+            </a>
+        </section>
+
+    </div>
+
+    <section class="map">
+        <div class="container">
+            <div class="map__search search">
+                <div class="search__content">
+                    <h3 class="search__title section-title">
+                        Выберите клинику<br>и запишитесь на приём:
+                    </h3>
+                    <div class="search__search-box search-box">
+                        <div class="search-box__select">
+
+                            <div class="__select country-select" id="country-select" data-state="" data-value="0">
+                                <div class="__select__title country-select__title" data-default="Все страны">Все
+                                    страны</div>
+                                <div class="__select__content country-select__content">
+
+                                </div>
+                            </div>
+
+                            <div class="__select city-select" id="city-select" data-state="" data-value="0">
+                                <div class="__select__title city-select__title" data-default="Все города">Все города
+                                </div>
+                                <div class="__select__content city-select__content">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="search-box__output">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map" style="width: 100%; height: 80vh; max-height: 700px;"></div>
+    </section>
+
+</main>

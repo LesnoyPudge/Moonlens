@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="RU">
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= blocks.title %></title>
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=f5b2d81d-5ae7-481a-b579-2652aeefeac8&lang=ru_RU"
+        type="text/javascript">
+        </script>
+    
+</head>
+<body>
+    <%- partial('../partials/_header') %>
+    <%- partial('../partials/_sprites') %>
+    <%- body -%>
+    <%- partial('../partials/_footer') %>
+</body>
+
+</html>
