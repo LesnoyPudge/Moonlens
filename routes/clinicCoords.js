@@ -2,7 +2,11 @@ import mongoose from 'mongoose';
 import MoonlensData from '../models/MoonlensData.js';
 
 export async function getClinicCoords() {
-    const doc = await MoonlensData.find({}, 'cities.clinics._id cities.clinics.clinic_coords');
+    let filter = {};
+    let projection = 'cities.clinics._id cities.clinics.clinic_coords';
+    let options = {};
+
+    const doc = await MoonlensData.find(filter, projection, options).lean();
     // console.log(`stringify: ${JSON.stringify(doc)}`);
     // console.log(`clinic_id: ${doc[0].cities[0].clinics[0]._id}`);
     // console.log(`clinic_coords: ${doc[0].cities[0].clinics[0].clinic_coords}`);
@@ -18,35 +22,36 @@ export async function getClinicCoords() {
     for (let countryCount = 0; countryCount < doc.length; countryCount++) {
         for (let cityCount = 0; cityCount < doc[countryCount].cities.length; cityCount++) {
             for (let clinicCount = 0; clinicCount < doc[0].cities[0].clinics.length; clinicCount++) {
+
                 let clinicData = {
                     'type': 'Feature',
-                            'id': doc[countryCount].cities[cityCount].clinics[clinicCount]._id,
-                            'geometry': {
-                                'type': 'Point', 
-                                'coordinates': doc[countryCount].cities[cityCount].clinics[clinicCount].clinic_coords,
-                            },
-                            'properties': {
-                                'balloonTitle': 'идет загрузка...', 
-                            },
-                            'options': {
-                                'balloonLayout': 'customLayout', 
-                                'balloonContentLayout': 'customContentLayout',
-                                'iconImageHref': 'images/map__icon.svg',
-                                'iconLayout': 'default#image',
-                                'hideIconOnBalloonOpen': false,
-                                'iconImageSize': [
-                                    50,
-                                    63
-                                ],
-                                'iconImageOffset': [
-                                    -25,
-                                    -64
-                                ],
-                                'balloonOffset': [
-                                    -1,
-                                    -5
-                                ],
-                            },
+                    'id': doc[countryCount].cities[cityCount].clinics[clinicCount]._id,
+                    'geometry': {
+                        'type': 'Point', 
+                        'coordinates': doc[countryCount].cities[cityCount].clinics[clinicCount].clinic_coords,
+                    },
+                    'properties': {
+                        'balloonTitle': 'идет загрузка...', 
+                    },
+                    'options': {
+                        'balloonLayout': 'customLayout', 
+                        'balloonContentLayout': 'customContentLayout',
+                        'iconImageHref': 'images/map__icon.svg',
+                        'iconLayout': 'default#image',
+                        'hideIconOnBalloonOpen': false,
+                        'iconImageSize': [
+                            50,
+                            63
+                        ],
+                        'iconImageOffset': [
+                            -25,
+                            -64
+                        ],
+                        'balloonOffset': [
+                            -1,
+                            -5
+                        ],
+                    },
                 };
                 clinics.push(clinicData);
             };

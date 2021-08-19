@@ -15,8 +15,8 @@ router.get('/clinicCoords', async (req, res) => {
     res.send(result);
 });
 
-router.get('/clinicDesc',async (req, res) => {
-    let result = await getClinicDesc();
+router.post('/clinicDesc',async (req, res) => {
+    let result = await getClinicDesc(req.body);
     res.send(result);
 });
 

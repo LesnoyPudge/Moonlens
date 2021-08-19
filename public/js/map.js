@@ -1,6 +1,4 @@
-ymaps.ready(init);
-
-function init() {
+export function init() {
     let myMap = new ymaps.Map('map', {
         center: [55.76, 37.64],
         zoom: 9
@@ -12,7 +10,8 @@ function init() {
             clusterize: true,
             // ObjectManager принимает те же опции, что и кластеризатор.
             gridSize: 64,
-            clusterDisableClickZoom: false
+            clusterDisableClickZoom: false,
+            // geoObjectOpenBalloonOnClick: false,
         });
 
     myMap.geoObjects.add(objectManager);
@@ -105,7 +104,7 @@ function init() {
             // '</div>'
 
             `<div class="balloon__content">
-            <h5 class="balloon__title">{{ properties.clinic_title|default:"идет загрузка..." }}</h5>
+            <h5 class="balloon__title">{{ properties.clinic_name|default:"идет загрузка..." }}</h5>
             <address class="balloon__address">{{ properties.clinic_address|default:"не указан" }}</address>
             <a class="balloon__email" href="mailto:{{ properties.clinic_email|default:"" }}">{{ properties.clinic_email|default:"не указан" }}</a>
             <a class="balloon__site-link" href="#" >{{ properties.clinic_siteLink|default:"не указан" }}</a>
@@ -146,9 +145,10 @@ function init() {
     });
 
 
+    // Загружаем содержимое балуна
     function downloadContent(geoObjects, id, isCluster) {
         // Создадим массив меток, для которых данные ещё не загружены.
-        var array = geoObjects.filter(function (geoObject) {
+        let array = geoObjects.filter(function (geoObject) {
             return geoObject.properties.balloonTitle === 'идет загрузка...' ||
                 geoObject.properties.balloonTitle === 'Not found';
         }),
@@ -162,24 +162,28 @@ function init() {
             // вернет JSON-объект, содержащий текст балуна для
             // заданных меток.
             ymaps.vow.resolve($.getJSON({
-                // Обратите внимание, что серверную часть необходимо реализовать самостоятельно.
                 contentType: 'application/json',
                 type: 'POST',
                 data: JSON.stringify(ids),
-                url: '/clinic-desc',
+                url: '/clinicDesc',
                 dataType: 'json',
                 processData: false
             })).then(
                 function (data) {
+                    // console.log(data);
+                    // console.log(data.clinic_name);
+                    // console.log(geoObjects);
+                    // console.log(geoObjects[0]);
+                    
                     geoObjects.forEach(function (geoObject) {
                         // Содержимое балуна берем из данных, полученных от сервера.
                         // Сервер возвращает массив объектов вида:
-                        // [ {"clinic_title": "Содержимое балуна"}, ...]
-                        geoObject.properties.clinic_title = data[geoObject.id].clinic_title;
-                        geoObject.properties.clinic_address = data[geoObject.id].clinic_address;
-                        geoObject.properties.clinic_email = data[geoObject.id].clinic_email;
-                        geoObject.properties.clinic_siteLink = data[geoObject.id].clinic_siteLink;
-                        geoObject.properties.clinic_phone = data[geoObject.id].clinic_phone;
+                        // [ {"clinic_name": "Содержимое балуна"}, ...]
+                        geoObject.properties.clinic_name = data.clinic_name;
+                        geoObject.properties.clinic_address = data.clinic_address;
+                        geoObject.properties.clinic_email = data.clinic_email;
+                        geoObject.properties.clinic_site = data.clinic_site;
+                        geoObject.properties.clinic_phone = data.clinic_phone;
                     });
                     // Оповещаем балун, что нужно применить новые данные.
                     setNewData();
@@ -203,23 +207,21 @@ function init() {
     }
 
 
+    // Отображаем метки клиник на карте
     $.ajax({
-        // В файле data.json заданы геометрия, опции и данные меток .
         url: "/clinicCoords"
-        // url: "./data3.json"
     }).done(function (data) {
-        console.log(data);
         objectManager.add(data);
     });
 
-    // fetch('/clinic-coords')
+    // НЕ РАБОТАЕТ:)
+    // fetch('/clinicCoords')
     //     .then((response) => {
     //         objectManager.add(response);
-    //         // return response.json();
-    //     }
-    //     // .then((data) => {
-    //     //   console.log(data);
-    //     // }
-    // );
+    //     });
+
+
 
 }
+
+export default init;

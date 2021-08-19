@@ -5,7 +5,7 @@ import fs from 'fs';
 import url from 'url';
 import mongoose from 'mongoose';
 import engine from 'ejs-locals';
-
+import bodyParser from 'body-parser';
 
 import Country from './models/MoonlensData.js';
 import config from './config/config.js'
@@ -14,14 +14,18 @@ import testRoures from './routes/router.js';
 
 
 
+
+
 const PORT = process.env.PORT || config.get('port');
 const hostname = '127.0.0.1';
 const app = express();
 
+app.use(bodyParser.json() );
+app.use(bodyParser.urlencoded({extended: true})); 
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./template'));
-// console.log(app.get('views'));
+
 
 app.use(express.static(path.resolve('./public')));
 // app.use(requestTime);
