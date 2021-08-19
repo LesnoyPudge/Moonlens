@@ -166,7 +166,7 @@ function init() {
                 contentType: 'application/json',
                 type: 'POST',
                 data: JSON.stringify(ids),
-                url: 'clinic-desc.php',
+                url: '/clinic-desc',
                 dataType: 'json',
                 processData: false
             })).then(
@@ -205,11 +205,21 @@ function init() {
 
     $.ajax({
         // В файле data.json заданы геометрия, опции и данные меток .
-        url: "/clinic-coords"
-        // url: "clinic-coords.php"
+        url: "/clinicCoords"
+        // url: "./data3.json"
     }).done(function (data) {
         console.log(data);
-        // objectManager.add(data);
+        objectManager.add(data);
     });
+
+    // fetch('/clinic-coords')
+    //     .then((response) => {
+    //         objectManager.add(response);
+    //         // return response.json();
+    //     }
+    //     // .then((data) => {
+    //     //   console.log(data);
+    //     // }
+    // );
 
 }

@@ -1,6 +1,8 @@
 import {Router} from 'express';
 import mongoose from 'mongoose';
 import MoonlensData from '../models/MoonlensData.js';
+import getClinicCoords from './clinicCoords.js';
+import getClinicDesc from './clinicDesc.js';
 
 const router = Router();
 
@@ -8,11 +10,14 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
-router.get('/clinic-coords', async (req, res) => {
-    MoonlensData.find({})
-        .then(function(result) {
-            res.send(JSON.stringify(result));
-        });
+router.get('/clinicCoords', async (req, res) => {
+    let result = await getClinicCoords();
+    res.send(result);
+});
+
+router.get('/clinicDesc',async (req, res) => {
+    let result = await getClinicDesc();
+    res.send(result);
 });
 
 router.get('*',async (req, res) => {
