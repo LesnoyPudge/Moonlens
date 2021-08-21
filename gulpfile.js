@@ -22,11 +22,11 @@ const path = {
         html: distPath,
         php: distPath,
         js: distPath + "js/",
-        css: distPath + "css/",
+        css: distPath + "public/css/",
         scss: distPath + "scss/",
         imagesPre: distPath + "imagesPre/",
         fonts: distPath + "fonts/",
-        images: distPath + "images"
+        images: distPath + "public/images"
     },
     src: {
         html: srcPath + "*.html",

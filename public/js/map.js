@@ -107,7 +107,7 @@ export function init() {
             <h5 class="balloon__title">{{ properties.clinic_name|default:"идет загрузка..." }}</h5>
             <address class="balloon__address">{{ properties.clinic_address|default:"не указан" }}</address>
             <a class="balloon__email" href="mailto:{{ properties.clinic_email|default:"" }}">{{ properties.clinic_email|default:"не указан" }}</a>
-            <a class="balloon__site-link" href="#" >{{ properties.clinic_siteLink|default:"не указан" }}</a>
+            <a class="balloon__site" href="#" >{{ properties.clinic_site|default:"не указан" }}</a>
             <a class="balloon__phone" href="tel:{{ properties.clinic_phone|default:"" }}">{{ properties.clinic_phone|default:"не указан" }}</a>
             <a href="#" class="balloon__order-button">Записаться на приём</a>
             </div>`

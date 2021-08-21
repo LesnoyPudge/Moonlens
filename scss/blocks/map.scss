@@ -1,0 +1,94 @@
+.balloon {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    z-index: 1;
+
+    &__body {
+        position: relative;
+        background-color: $bg-footer;
+        color: $font-button-primary--theme--light;
+        display: flex;
+        width: max-content;
+        border-radius: 10px;
+        position: absolute;
+        left: -64px;
+        top: 14px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+        margin: 20px;
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+        max-width: 285px;
+    }
+    &__arrow {
+        position: absolute;
+        top: -15px;
+        left: 55px;
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/balloon__triangle.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        content: '';
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 2.6rem;
+        line-height: 2.6rem;
+        padding-right: 25px;
+    }
+    &__address {}
+    &__email {}
+    &__site-link {
+        text-decoration: underline;
+    }
+    &__phone {
+        margin-bottom: 7px;
+    }
+    &__order-button {
+        background-color: $bg-button-primary--theme-light;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        padding: 10px;
+        text-align: center;
+        border-radius: 7px;
+    }
+    &__close {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: -15px;
+    left: 55px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/balloon__triangle.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    /* Firefox 3.5+ */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+}
+
+.map {
+    position: relative;
+
+    &__search {}
+}

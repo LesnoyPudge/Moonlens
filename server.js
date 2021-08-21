@@ -10,7 +10,7 @@ import bodyParser from 'body-parser';
 import Country from './models/MoonlensData.js';
 import config from './config/config.js'
 import {requestTime, logger} from './public/js/middlewares.js';
-import testRoures from './routes/router.js';
+import router from './routes/router.js';
 
 
 
@@ -30,7 +30,7 @@ app.set('views', path.resolve('./template'));
 app.use(express.static(path.resolve('./public')));
 // app.use(requestTime);
 // app.use(logger);
-app.use(testRoures);
+app.use(router);
 
 // app.get('/', (req, res) => {
 //     res.render('index', {title: 'Main page', active: 'main'});

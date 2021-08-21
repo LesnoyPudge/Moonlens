@@ -1,0 +1,56 @@
+<% layout('./layout/playgroundPage') -%>
+<% block('title', 'playgroundPage'); -%>
+
+<a href="./">Back to main page</a>
+
+
+<div class="container">
+    <div class="map__search search">
+        <h3 class="search__title section-title">
+            Выберите клинику<br>и запишитесь на приём:
+        </h3>
+        <div class="search__search-box search-box" id="search-box">
+            <div class="search-box__select" id="select">
+
+                <!-- Начало селектов -->
+
+                <div class="country-select" id="country-select" data-state="close">
+                    <div class="country-select__title">
+                        <svg class="select-icon">
+                            <use xlink:href="#select-icon"></use>
+                        </svg>
+                        <span class="select-text">Все страны</span>
+                        <svg class="select-arrow">
+                            <use xlink:href="#select-arrow"></use>
+                        </svg>
+                    </div>
+                    
+                    <ul class="country-select__content">
+                        <li class="country-select__item" data-value="0" data-checked="true">Все страны</li>
+                    </ul>
+                </div>
+
+                <div class="city-select" id="city-select" data-state="close">
+                    <div class="city-select__title">
+                        <svg class="select-icon">
+                            <use xlink:href="#select-icon"></use>
+                        </svg>
+                        <span class="select-text">Все города</span>
+                        <svg class="select-arrow">
+                            <use xlink:href="#select-arrow"></use>
+                        </svg>
+                    </div>
+                    <ul class="city-select__content">  
+                        <li class="city-select__item" data-value="0" data-checked="true">Все города</li>
+                    </ul>
+                </div>
+                
+                <!-- Конец селектов -->
+
+            </div>
+            <div class="search-box__output" id="output">
+
+            </div>
+        </div>
+    </div>
+</div>
