@@ -19,7 +19,7 @@
                         <svg class="select-icon">
                             <use xlink:href="#select-icon"></use>
                         </svg>
-                        <span class="select-text">Все страны</span>
+                        <span class="select-text"></span>
                         <svg class="select-arrow">
                             <use xlink:href="#select-arrow"></use>
                         </svg>
@@ -35,7 +35,7 @@
                         <svg class="select-icon">
                             <use xlink:href="#select-icon"></use>
                         </svg>
-                        <span class="select-text">Все города</span>
+                        <span class="select-text"></span>
                         <svg class="select-arrow">
                             <use xlink:href="#select-arrow"></use>
                         </svg>
@@ -48,9 +48,15 @@
                 <!-- Конец селектов -->
 
             </div>
-            <div class="search-box__output" id="output">
-
-            </div>
+            <ul class="search-box__output output" id="output">
+                <li class='output__item' id='output__item' data-id='clinic_id'>
+                    <div class='output__title'>clinic_title</div>
+                    <address class='output__address'>clinic_address</address>
+                    <div class='output__email'>"'clinic_email</div>
+                    <div class='output__site-link'>clinic_siteLink</div>
+                    <div class='output__phone'>clinic_phone</div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

@@ -14,7 +14,7 @@ export async function getClinicList(body) {
 
         const doc = await MoonlensData.find(filter, projection, options).lean();
         // console.log('Got body: ', body);
-        console.log('Raw output: ', doc)
+        // console.log('Raw output: ', doc)
         
         for (let countryCount = 0; countryCount < doc.length; countryCount++) {
             for (let cityCount = 0; cityCount < doc[countryCount].cities.length; cityCount++) {
@@ -31,7 +31,7 @@ export async function getClinicList(body) {
                 };
             };
         };
-        console.log(JSON.stringify(clinics));
+        // console.log(JSON.stringify(clinics));
         result = JSON.stringify(clinics);
     } else {
         filter = { 'cities._id': body.dataValue };
@@ -41,7 +41,7 @@ export async function getClinicList(body) {
 
         const doc = await MoonlensData.find(filter, projection, options).lean();
         // console.log('Got body: ', body);
-        console.log('Raw output: ', doc)
+        // console.log('Raw output: ', doc)
         
         for (let countryCount = 0; countryCount < doc.length; countryCount++) {
             for (let cityCount = 0; cityCount < doc[countryCount].cities.length; cityCount++) {
@@ -60,12 +60,12 @@ export async function getClinicList(body) {
                 };
             };
         };
-        console.log(JSON.stringify(clinicData));
+        // console.log(JSON.stringify(clinicData));
         result = JSON.stringify(clinicData);
     }
-    console.log('filter: ', filter);
+    // console.log('filter: ', filter);
     
-    console.log(result);
+    // console.log(result);
     return result;
 }
 

@@ -220,7 +220,37 @@ export function init() {
     //         objectManager.add(response);
     //     });
 
+    output.addEventListener('click', (e) => {
+        
+        if (!e.target.closest('[class$=item]')) return;
 
+        let selectedTarget = e.target.closest('[class$=item]');
+        let clinicId = selectedTarget.dataset.id;
+
+        // setCheck(output, selectedTarget);
+
+        let clinicCoords = getCordsById(clinicId);
+        myMap.setCenter(clinicCoords);
+        objectManager.objects.balloon.close();
+        myMap.setZoom(12);
+        myMap.panTo(clinicCoords, {
+            delay: 0,
+            flying: true
+        });
+
+        setTimeout(
+            function () {
+                objectManager.objects.balloon.open(clinicId);
+            }, 700);
+        objectManager.objects.setObjectOptions(clinicId, {
+            iconImageHref: 'images/map__icon--light.svg'
+        });
+
+    });
+
+    function getCordsById(id) {
+        return objectManager.objects._objectsById[id].geometry.coordinates;
+    }
 
 }
 

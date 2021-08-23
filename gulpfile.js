@@ -1,15 +1,15 @@
 const { src, dest, watch, parallel, series } = require('gulp');
 const gulp = require("gulp");
-const browserSync = require('browser-sync').create();
+// const browserSync = require('browser-sync').create();
 const del = require('del');
-const autoprefixer = require('gulp-autoprefixer');
+// const autoprefixer = require('gulp-autoprefixer');
 const scss = require('gulp-sass');
 const concat = require('gulp-concat');
-const imagemin = require('gulp-imagemin');
+// const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
-const uglify = require('gulp-uglify-es').default;
-const fileinclude = require('gulp-file-include');
-const ts = require('gulp-typescript');
+// const uglify = require('gulp-uglify-es').default;
+// const fileinclude = require('gulp-file-include');
+// const ts = require('gulp-typescript');
 
 
 // const srcPath = 'src/';
@@ -52,14 +52,14 @@ const path = {
     clean: "./" + distPath
 }
 
-const projectName = 'MoonlensV2';
+// const projectName = 'MoonlensV2';
 
-function browsersync() {
-    browserSync.init({
-        proxy: "http://localhost/" + projectName,
-        notify: false
-    });
-}
+// function browsersync() {
+//     browserSync.init({
+//         proxy: "http://localhost/" + projectName,
+//         notify: false
+//     });
+// }
 
 // function html() {
 //     return src([
@@ -104,7 +104,7 @@ function cssMin() {
         .pipe(scss({}))
         .pipe(concat('style.min.css'))
         .pipe(dest(path.build.css))
-        .pipe(browserSync.stream())
+        // .pipe(browserSync.stream())
 }
 
 // function tsTransform() {
@@ -148,7 +148,7 @@ function imagesMin() {
             })
         )
         .pipe(dest(path.build.images))
-        .pipe(browserSync.reload({ stream: true }));
+        // .pipe(browserSync.reload({ stream: true }));
 }
 
 // function cleanDist() {
@@ -159,8 +159,8 @@ function watchFiles() {
     // watch(path.watch.html, html);
     // watch(path.watch.php, php);
     watch(path.watch.scss, cssMin);
-    watch(path.watch.js, browserSync.stream());
-    watch(path.watch.ejs, browserSync.stream());
+    // watch(path.watch.js, browserSync.stream());
+    // watch(path.watch.ejs, browserSync.stream());
     // watch(path.watch.ts, tsTransform, jsMin);
     // watch(path.watch.fonts, fonts);
     watch(path.watch.images, imagesMin);
@@ -176,4 +176,4 @@ exports.watchFiles = watchFiles;
 // exports.cleanDist = cleanDist;
 
 // exports.build = series(cleanDist, html, css, images, tsTransform, js, fonts, build);
-exports.default = series(cssMin, imagesMin, parallel(watchFiles, browsersync));
+exports.default = series(cssMin, imagesMin, parallel(watchFiles));

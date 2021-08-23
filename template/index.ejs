@@ -556,36 +556,49 @@
     <section class="map">
         <div class="container">
             <div class="map__search search">
-                <div class="search__content">
-                    <h3 class="search__title section-title">
-                        Выберите клинику<br>и запишитесь на приём:
-                    </h3>
-                    <div class="search__search-box search-box" id="search-box">
-                        <div class="search-box__select">
-
-                            <div class="__select country-select" id="country-select" data-state="" data-value="0">
-                                <div class="__select__title country-select__title" data-default="Все страны">Все
-                                    страны</div>
-                                <div class="__select__content country-select__content">
-                                    <input id="singleSelect0" class="__select__input country-select__input" type="radio" name="singleSelect" checked />
-                                    <label for="singleSelect0" class="__select__label country-select__label" data-value="0">Все страны</label>
-                                </div>
+                <h3 class="search__title section-title">
+                    Выберите клинику<br>и запишитесь на приём:
+                </h3>
+                <div class="search__search-box search-box" id="search-box">
+                    <div class="search-box__select" id="select">
+        
+                        <!-- Начало селектов -->
+        
+                        <div class="country-select" id="country-select" data-state="close">
+                            <div class="country-select__title">
+                                <svg class="select-icon">
+                                    <use xlink:href="#select-icon"></use>
+                                </svg>
+                                <span class="select-text"></span>
+                                <svg class="select-arrow">
+                                    <use xlink:href="#select-arrow"></use>
+                                </svg>
                             </div>
-
-                            <div class="__select city-select" id="city-select" data-state="" data-value="0">
-                                <div class="__select__title city-select__title" data-default="Все города">Все города
-                                </div>
-                                <div class="__select__content city-select__content">
-                                    <input id="singleSelect0" class="__select__input city-select__input" type="radio" name="singleSelect" checked />
-                                    <label for="singleSelect0" class="__select__label city-select__label" data-value="0">Все города</label>
-                                </div>
+                            
+                            <ul class="country-select__content">
+                                <li class="country-select__item" data-value="0" data-checked="true">Все страны</li>
+                            </ul>
+                        </div>
+        
+                        <div class="city-select" id="city-select" data-state="close">
+                            <div class="city-select__title">
+                                <svg class="select-icon">
+                                    <use xlink:href="#select-icon"></use>
+                                </svg>
+                                <span class="select-text"></span>
+                                <svg class="select-arrow">
+                                    <use xlink:href="#select-arrow"></use>
+                                </svg>
                             </div>
-
+                            <ul class="city-select__content">  
+                                <li class="city-select__item" data-value="0" data-checked="true">Все города</li>
+                            </ul>
                         </div>
-                        <div class="search-box__output" id="output">
-
-                        </div>
+                        
+                        <!-- Конец селектов -->
+        
                     </div>
+                    <ul class="search-box__output output" id="output"></ul>
                 </div>
             </div>
         </div>

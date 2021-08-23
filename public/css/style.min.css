@@ -368,6 +368,9 @@ time, mark, audio, video {
 li {
   list-style-type: none; }
 
+b {
+  font-weight: bold; }
+
 :focus {
   outline: 0; }
 
@@ -508,6 +511,7 @@ a {
   box-shadow: 0px 5px 30px rgba(9, 32, 39, 0.12);
   border-radius: 20px;
   padding: 44px 38px;
+  opacity: 0.5;
   transition: 0.3s; }
   .search__title {
     margin-bottom: 20px; }
@@ -529,24 +533,6 @@ a {
     column-gap: 1px;
     border-radius: 5px 5px 0 0;
     border-top: 1px solid #afafaf; }
-  .search-box__output {
-    flex-direction: column;
-    overflow-y: scroll;
-    height: 100%;
-    max-height: 350px;
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-    border-color: #afafaf; }
-  .search-box__item {
-    display: flex;
-    flex-direction: column;
-    row-gap: 4px;
-    padding: 9px 36px;
-    font-size: 1.7rem;
-    line-height: 2.2rem;
-    cursor: pointer; }
-    .search-box__item:hover {
-      background-color: whitesmoke; }
   .search-box__title {
     font-weight: 700;
     font-size: 1.8rem;
@@ -581,7 +567,7 @@ a {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 61px;
+    top: 60px;
     width: 100%;
     opacity: 1;
     max-height: 150px;
@@ -591,7 +577,7 @@ a {
     border-width: 0px 1px 1px 1px;
     border-color: #afafaf;
     border-style: solid;
-    background-color: #afafaf;
+    background-color: white;
     gap: 1px;
     border-radius: 0 0 5px 5px; }
   .country-select__item, .city-select__item {
@@ -636,6 +622,30 @@ a {
   width: 20px;
   height: 20px;
   transition: all 0.2s linear; }
+
+.output {
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+  border-width: 0 1px 1px 1px;
+  border-radius: 0 0 5px 5px;
+  border-style: solid;
+  border-color: #afafaf;
+  height: 288px;
+  max-height: 288px; }
+  .output__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    padding: 9px 36px;
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+    cursor: pointer;
+    transition: all 0.2s linear; }
+    .output__item:hover {
+      background-color: whitesmoke; }
+    .output__item[data-checked=true] {
+      background-color: whitesmoke; }
 
 .header {
   position: relative;
