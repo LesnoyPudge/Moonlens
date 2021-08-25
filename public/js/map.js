@@ -1,3 +1,6 @@
+import {setCheck, toggleState} from "./searchBox.js";
+import {modalOpen} from "./orderModal.js";
+
 export function init() {
     let myMap = new ymaps.Map('map', {
         center: [55.76, 37.64],
@@ -23,13 +26,13 @@ export function init() {
         'layout.storage'
     ], function (provide, templateLayoutFactory, layoutStorage) {
         let customLayoutClass = templateLayoutFactory.createClass(
-            '<div class="map__balloon balloon">' +
-            '<div class="balloon__body">' +
-            '<div class="arrow"></div>' +
-            '$[[options.contentLayout]]' +
-            '<img class="balloon__close" src="images/balloon__close.svg">' +
-            '</div>' +
-            '</div>',
+            `<div class="map__balloon balloon">
+            <div class="balloon__body">
+            <div class="arrow"></div>
+            $[[options.contentLayout]]
+            <img class="balloon__close" src="images/close-button.svg">
+            </div>
+            </div>`,
             {
                 build: function () {
                     this.constructor.superclass.build.call(this);
@@ -94,59 +97,97 @@ export function init() {
         'layout.storage'
     ], function (provide, templateLayoutFactory, layoutStorage) {
         var customContentLayoutClass = templateLayoutFactory.createClass(
-            // '<div class="balloon__content">' +
-            // '<h5 class="balloon__title">{{ properties.clinic_title|default:"идет загрузка..." }}</h5>' +
-            // '<address class="balloon__address">{{ properties.clinic_address|default:"не указан" }}</address>' +
-            // '<a class="balloon__email" href="mailto:{{ properties.clinic_email|default:"" }}">{{ properties.clinic_email|default:"не указан" }}</a>' +
-            // '<a class="balloon__site-link" href="#" >{{ properties.clinic_siteLink|default:"не указан" }}</a> ' +
-            // '<a class="balloon__phone" href="tel:{{ properties.clinic_phone|default:"" }}">{{ properties.clinic_phone|default:"не указан" }}</a> ' +
-            // '<a href="#" class="balloon__order-button">Записаться на приём</a>' +
-            // '</div>'
-
             `<div class="balloon__content">
             <h5 class="balloon__title">{{ properties.clinic_name|default:"идет загрузка..." }}</h5>
             <address class="balloon__address">{{ properties.clinic_address|default:"не указан" }}</address>
             <a class="balloon__email" href="mailto:{{ properties.clinic_email|default:"" }}">{{ properties.clinic_email|default:"не указан" }}</a>
             <a class="balloon__site" href="#" >{{ properties.clinic_site|default:"не указан" }}</a>
             <a class="balloon__phone" href="tel:{{ properties.clinic_phone|default:"" }}">{{ properties.clinic_phone|default:"не указан" }}</a>
-            <a href="#" class="balloon__order-button">Записаться на приём</a>
+            <button type="button" class="balloon__order-button order-button" id="order-button" data-clinic-id="{{ properties.clinic_id}}">Записаться на приём</button>
             </div>`
         );
         layoutStorage.add('customContentLayout', customContentLayoutClass);
         provide(customContentLayoutClass);
     });
 
+    ymaps.modules.define('MyIconContentLayoutModule', [
+        'templateLayoutFactory',
+        'layout.storage'
+    ], function (provide, templateLayoutFactory, layoutStorage) {
+        let MyIconContentLayoutClass = templateLayoutFactory.createClass(
+            `<svg class="map-icon" id="$[id]" data-state="">
+                <use xlink:href="#map-icon"></use>
+            </svg>`
+        );
+        layoutStorage.add('MyIconContentLayout', MyIconContentLayoutClass);
+        provide(MyIconContentLayoutClass);
+    });
+    
+
     // Запрос пользовательского макета
-    ymaps.modules.require(['CustomContentLayoutModule'])
-        .spread(
-            function (CustomContentLayoutModule) {
-                // ...
-            },
-            this
-    );
-    ymaps.modules.require(['CustomLayoutModule'])
-        .spread(
-            function (CustomLayoutModule) {
-                // ...
-            },
-            this
-    );
+    ymaps.modules.require(['CustomContentLayoutModule']);
+    ymaps.modules.require(['CustomLayoutModule']);
+    ymaps.modules.require(['MyIconContentLayoutModule']);
 
 
-    objectManager.objects.events.add('balloonopen', function (e) {
-        console.log('balloonopen')
+
+
+    //Events
+
+    objectManager.objects.events.add('balloonopen', (e) => {
 
         // Получим объект, на котором открылся балун.
-        var id = e.get('objectId'),
-            geoObject = objectManager.objects.getById(id);
-        // Загрузим данные для объекта при необходимости.
+        let objectId = e.get('objectId');
+        let geoObject = objectManager.objects.getById(objectId);
+        
+        // Переключаем состояние метки и меняем её цвет
+        toggleState(document.getElementById(objectId));
 
-        downloadContent([geoObject], id);
+        // Загрузим данные для балуна
+        downloadContent([geoObject], objectId).then(() => {
+            // Добавляем обработчик для кнопки "Записаться на приём"
+            // modalInit([geoObject], objectId);
+            // map.addEventListener('click', handler);
+        });
+
+        
+    });
+
+    objectManager.objects.events.add('balloonclose', (e) => {
+
+        let objectId = e.get('objectId');
+
+        toggleState(document.getElementById(objectId));
+    });
+
+    objectManager.objects.events.add('click', (e) => {
+        
+        let objectId = e.get('objectId');
+
+        if (objectManager.objects.balloon.isOpen(objectId)) {
+            objectManager.objects.balloon.close();
+        } 
+    });
+
+    myMap.events.add('click', () => {
+        myMap.balloon.close();
+    });
+
+    // При нажатии на кнопку "Записаться на приём" вызываем modalOpen
+    map.addEventListener('click', (e) => {
+        if (e.target.id != 'order-button') return;
+
+        let objectId = e.target.dataset.clinicId;
+        let geoObject = objectManager.objects.getById(objectId);
+        modalOpen(geoObject);
     });
 
 
+    // Конец ивентов
+
+    
     // Загружаем содержимое балуна
-    function downloadContent(geoObjects, id, isCluster) {
+    async function downloadContent(geoObjects, id, isCluster) {
         // Создадим массив меток, для которых данные ещё не загружены.
         let array = geoObjects.filter(function (geoObject) {
             return geoObject.properties.balloonTitle === 'идет загрузка...' ||
@@ -179,6 +220,9 @@ export function init() {
                         // Содержимое балуна берем из данных, полученных от сервера.
                         // Сервер возвращает массив объектов вида:
                         // [ {"clinic_name": "Содержимое балуна"}, ...]
+                        geoObject.properties.country_name = data.country_name;
+                        geoObject.properties.city_name = data.city_name;
+                        geoObject.properties.clinic_id = data.clinic_id;
                         geoObject.properties.clinic_name = data.clinic_name;
                         geoObject.properties.clinic_address = data.clinic_address;
                         geoObject.properties.clinic_email = data.clinic_email;
@@ -196,7 +240,7 @@ export function init() {
                 }
             );
         }
-
+    
         function setNewData() {
             if (isCluster && objectManager.clusters.balloon.isOpen(id)) {
                 objectManager.clusters.balloon.setData(objectManager.clusters.balloon.getData());
@@ -205,53 +249,49 @@ export function init() {
             }
         }
     }
-
-
+    
+    
     // Отображаем метки клиник на карте
     $.ajax({
         url: "/clinicCoords"
     }).done(function (data) {
         objectManager.add(data);
     });
-
+    
     // НЕ РАБОТАЕТ:)
     // fetch('/clinicCoords')
     //     .then((response) => {
     //         objectManager.add(response);
     //     });
+    
 
+    // Обрабатываем клики по элементам в поле вывода клиник
     output.addEventListener('click', (e) => {
         
         if (!e.target.closest('[class$=item]')) return;
-
+    
         let selectedTarget = e.target.closest('[class$=item]');
         let clinicId = selectedTarget.dataset.id;
-
-        // setCheck(output, selectedTarget);
-
         let clinicCoords = getCordsById(clinicId);
+
+        setCheck(output, selectedTarget);
+
+        // Перемещаем карты на координаты клиники
         myMap.setCenter(clinicCoords);
-        objectManager.objects.balloon.close();
-        myMap.setZoom(12);
+        myMap.setZoom(11);
         myMap.panTo(clinicCoords, {
             delay: 0,
-            flying: true
+            flying: false
+        }).then(() => {
+            objectManager.objects.balloon.open(clinicId);
         });
-
-        setTimeout(
-            function () {
-                objectManager.objects.balloon.open(clinicId);
-            }, 700);
-        objectManager.objects.setObjectOptions(clinicId, {
-            iconImageHref: 'images/map__icon--light.svg'
-        });
-
     });
-
+    
     function getCordsById(id) {
         return objectManager.objects._objectsById[id].geometry.coordinates;
     }
 
-}
+
+}       
 
 export default init;

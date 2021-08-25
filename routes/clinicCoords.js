@@ -30,13 +30,14 @@ export async function getClinicCoords() {
                         'coordinates': doc[countryCount].cities[cityCount].clinics[clinicCount].clinic_coords,
                     },
                     'properties': {
-                        'balloonTitle': 'идет загрузка...', 
+                        'balloonTitle': 'идет загрузка...',
                     },
                     'options': {
                         'balloonLayout': 'customLayout', 
                         'balloonContentLayout': 'customContentLayout',
-                        'iconImageHref': 'images/map__icon.svg',
-                        'iconLayout': 'default#image',
+                        'iconLayout': 'default#imageWithContent',
+                        'iconImageHref': '',
+                        'iconContentLayout': 'MyIconContentLayout',
                         'hideIconOnBalloonOpen': false,
                         'iconImageSize': [
                             50,

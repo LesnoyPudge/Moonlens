@@ -50,14 +50,7 @@
     &__phone {
         margin-bottom: 7px;
     }
-    &__order-button {
-        background-color: $bg-button-primary--theme-light;
-        font-size: 2rem;
-        line-height: 2.4rem;
-        padding: 10px;
-        text-align: center;
-        border-radius: 7px;
-    }
+    &__order-button {}
     &__close {
         position: absolute;
         width: 25px;
@@ -91,4 +84,14 @@
     position: relative;
 
     &__search {}
+}
+
+.map-icon {
+    width: 50px;
+    height: 63px;
+    fill: #153862;
+
+    &[data-state=open] {
+        fill: #0066D9;
+    }
 }

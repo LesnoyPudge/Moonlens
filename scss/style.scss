@@ -31,7 +31,7 @@ b {
 }
 
 :focus {
-    outline: 0;
+    outline: none;
 }
 
 *,
@@ -69,7 +69,7 @@ b {
 
 html {
     font-size: 62.5%;
-    line-height: 1.1;
+    line-height: 1;
     overflow-x: hidden;
 }
 
@@ -107,6 +107,7 @@ a {
 
 @import "blocks/map";
 @import "blocks/searchBox";
+@import "blocks/orderModal";
 
 .header {
     position: relative;

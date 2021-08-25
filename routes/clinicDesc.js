@@ -20,7 +20,9 @@ export async function getClinicDesc(body) {
                 if (doc[countryCount].cities[cityCount].clinics[clinicCount]._id.toString() === body.toString()) {
 
                     clinicData = {
-                        // '_id': doc[countryCount].cities[cityCount].clinics[clinicCount]._id,
+                        'country_name':doc[countryCount].country_name,
+                        'city_name':doc[countryCount].cities[cityCount].city_name,
+                        'clinic_id': doc[countryCount].cities[cityCount].clinics[clinicCount]._id,
                         'clinic_name': doc[countryCount].cities[cityCount].clinics[clinicCount].clinic_name,
                         'clinic_address': doc[countryCount].cities[cityCount].clinics[clinicCount].clinic_address,
                         'clinic_email': doc[countryCount].cities[cityCount].clinics[clinicCount].clinic_email,

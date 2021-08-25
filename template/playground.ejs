@@ -4,59 +4,51 @@
 <a href="./">Back to main page</a>
 
 
-<div class="container">
-    <div class="map__search search">
-        <h3 class="search__title section-title">
-            Выберите клинику<br>и запишитесь на приём:
-        </h3>
-        <div class="search__search-box search-box" id="search-box">
-            <div class="search-box__select" id="select">
-
-                <!-- Начало селектов -->
-
-                <div class="country-select" id="country-select" data-state="close">
-                    <div class="country-select__title">
-                        <svg class="select-icon">
-                            <use xlink:href="#select-icon"></use>
-                        </svg>
-                        <span class="select-text"></span>
-                        <svg class="select-arrow">
-                            <use xlink:href="#select-arrow"></use>
-                        </svg>
-                    </div>
-                    
-                    <ul class="country-select__content">
-                        <li class="country-select__item" data-value="0" data-checked="true">Все страны</li>
-                    </ul>
-                </div>
-
-                <div class="city-select" id="city-select" data-state="close">
-                    <div class="city-select__title">
-                        <svg class="select-icon">
-                            <use xlink:href="#select-icon"></use>
-                        </svg>
-                        <span class="select-text"></span>
-                        <svg class="select-arrow">
-                            <use xlink:href="#select-arrow"></use>
-                        </svg>
-                    </div>
-                    <ul class="city-select__content">  
-                        <li class="city-select__item" data-value="0" data-checked="true">Все города</li>
-                    </ul>
-                </div>
-                
-                <!-- Конец селектов -->
-
+<div class="order-modal" id="order-modal">
+    <div class="order-modal__wrapper"></div>
+    <div class="order-modal__order-box order-box">
+        <div class="order-box__header">
+            <div class="order-box__title">
+                Запишитесь на приём
             </div>
-            <ul class="search-box__output output" id="output">
-                <li class='output__item' id='output__item' data-id='clinic_id'>
-                    <div class='output__title'>clinic_title</div>
-                    <address class='output__address'>clinic_address</address>
-                    <div class='output__email'>"'clinic_email</div>
-                    <div class='output__site-link'>clinic_siteLink</div>
-                    <div class='output__phone'>clinic_phone</div>
-                </li>
-            </ul>
+            <svg class="order-box__close-button" id="modal-close">
+                <use xlink:href="#close-button"></use>
+            </svg>
         </div>
+        <form class="order-box__order-form order-form" id="order-form">
+
+            <label class="order-form__label" data-state="outlined">
+                <span class="order-form__outlined-label">Клиника</span>
+                <input class="order-form__input" name="clinic-name" type="text" value>
+            </label>
+
+            <label class="order-form__label" data-state>
+                <span class="order-form__outlined-label">Город</span>
+                <input class="order-form__input" name="clinic-city" type="text" value>
+            </label>
+
+            <label class="order-form__label" data-state>
+                <span class="order-form__outlined-label">Ваше имя</span>
+                <input class="order-form__input" name="client-name" type="text" value placeholder="Иванов Иван Иванович">
+            </label>
+
+            <label class="order-form__label" data-state>
+                <span class="order-form__outlined-label">Ваш телефон</span>
+                <input class="order-form__input" name="client-phone" type="tel" value placeholder="8 800 555 35 35">
+            </label>
+            
+            <label class="order-form__label" data-state>
+                <span class="order-form__outlined-label">Ваш E-mail</span>
+                <input class="order-form__input" name="client-email" type="email" value placeholder="myemail@.ru">
+            </label>
+            
+            <button class="order-form__confirm-button confirm-button" name="confirm-button" type="submit">Оставить заявку</button>
+        </form>
     </div>
 </div>
+
+<div class="lorem">qwe</div>
+<div margin="0px" padding="0px" overflow="hidden">qwe</div>
+<div margin="0px" padding="0px" overflow="hidden">qwe</div>
+<div margin="0px" padding="0px" overflow="hidden">qwe</div>
+<div margin="0px" padding="0px" overflow="hidden">qwe</div>

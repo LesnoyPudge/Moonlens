@@ -605,4 +605,50 @@
         <div id="map" style="width: 100%; height: 80vh; max-height: 700px;"></div>
     </section>
 
+
+
+    <!-- Модальные окна -->
+
+    <div class="order-modal" id="order-modal">
+        <div class="order-modal__wrapper"></div>
+        <div class="order-modal__order-box order-box" id="order-box">
+            <div class="order-box__header">
+                <div class="order-box__title">
+                    Запишитесь на приём
+                </div>
+                <svg class="order-box__close-button" id="modal-close">
+                    <use xlink:href="#close-button"></use>
+                </svg>
+            </div>
+            <form class="order-box__order-form order-form" id="order-form">
+    
+                <label class="order-form__label" data-state="outlined">
+                    <span class="order-form__outlined-label">Клиника</span>
+                    <input class="order-form__input" name="clinic-name" type="text" value disabled required>
+                </label>
+    
+                <label class="order-form__label" data-state>
+                    <span class="order-form__outlined-label">Город</span>
+                    <input class="order-form__input" name="clinic-city" type="text" value disabled required>
+                </label>
+    
+                <label class="order-form__label" data-state>
+                    <span class="order-form__outlined-label">Ваше имя</span>
+                    <input class="order-form__input" name="client-name" type="text" value placeholder="Иванов Иван Иванович" >
+                </label>
+    
+                <label class="order-form__label" data-state>
+                    <span class="order-form__outlined-label">Ваш телефон</span>
+                    <input class="order-form__input" name="client-phone" type="tel" value placeholder="8 800 555 35 35" >
+                </label>
+                
+                <label class="order-form__label" data-state>
+                    <span class="order-form__outlined-label">Ваш E-mail</span>
+                    <input class="order-form__input" name="client-email" type="email" value placeholder="myemail@.ru">
+                </label>
+                
+                <button class="order-form__confirm-button confirm-button" name="confirm-button" type="submit">Оставить заявку</button>
+            </form>
+        </div>
+    </div>
 </main>
