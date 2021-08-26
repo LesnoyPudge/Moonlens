@@ -1,21 +1,4 @@
-.order-button, .confirm-button {
-    color: $font-button-primary--theme--light;
-    background-color: $bg-button-primary--theme-light;
-    font-size: 2rem;
-    line-height: 2.4rem;
-    padding: 10px;
-    text-align: center;
-    border-radius: 7px;
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-        transform: translate(0, 2px);
-        transition: 0.2s;
-    }
-}
-
-.order-box {
+.question-box {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -24,12 +7,12 @@
     width: 100%;
     max-width: 600px;
     border-radius: 20px;
+    
 
     &__header {
         position: relative;
         text-align: center;
     }
-
     &__title {
         margin-top: 30px;
         font-size: 3.4rem;
@@ -42,12 +25,12 @@
         top: 7px;
         right: 7px;
     }
-    &__order-form {
+    &__question-form {
         margin: 40px;
     }
 }
 
-.order-form {
+.question-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,13 +43,19 @@
         background-color: white;
     }
 
-    &__outlined-text {
-        font-size: 1.8rem;   
+    &__outlined-label {
+        font-size: 1.8rem;  
     }
 
     &__input {
         font-size: 2rem;
         line-height: 1rem;
+    }
+
+    &__textarea {
+        height: auto;
+        font-size: 2rem;
+        resize: none;
     }
 
     &__confirm-button {
@@ -75,3 +64,4 @@
         padding: 15px;
     }
 }
+

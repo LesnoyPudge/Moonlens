@@ -13,7 +13,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
     margin: 0;
     padding: 0;
     border: 0;
@@ -105,8 +105,18 @@ a {
     color: inherit;
 }
 
+
+@import "blocks/recommendation";
+@import "blocks/faq";
 @import "blocks/map";
 @import "blocks/searchBox";
+
+// Модальные окна
+@import "blocks/modal";
+@import "blocks/outline";
+
+@import "blocks/videoModal";
+@import "blocks/questionModal";
 @import "blocks/orderModal";
 
 .header {
@@ -769,59 +779,7 @@ a {
     }
 }
 
-.FAQ {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
-    align-items: center;
 
-    &__section-title {
-        text-align: center;
-        margin-bottom: 48px;
-    }
-    &__questions {}
-    &__more-info-button {
-    }
-}
-
-.questions {
-    display: flex;
-    gap: 40px;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    &__col {
-        display: flex;
-        flex-direction: column;
-        row-gap: 40px;
-        width: 48%;
-        margin-bottom: 48px;
-    }
-    &__item {
-        display: flex;
-        flex-direction: row;
-        column-gap: 5px;
-        background-color: #E9F1FA;
-        border-radius: 16px;
-        padding: 20px 14px;
-    }
-    &__content {
-    }
-    &__image {
-        height: 33px;
-        width: 33px;
-    }
-    &__title {
-        font-weight: 700;
-        font-size: 3.6rem;
-        line-height: 3.6rem;
-    }
-    &__text {
-        font-size: 2rem;
-        line-height: 2.4rem;
-        margin-top: 5px;
-    }
-}
 
 .footer {
     background-color: $bg-footer;

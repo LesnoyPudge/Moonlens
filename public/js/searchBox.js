@@ -62,8 +62,8 @@ function cleanList(listToDelete) {
 }
 
 export function toggleState(currentSelect) {
-
-    if (currentSelect.dataset.state === 'close' || currentSelect.dataset.state == '') {
+    // console.log('toggleState');
+    if (currentSelect.dataset.state == 'close' || currentSelect.dataset.state == '') {
         currentSelect.dataset.state = 'open';
     } else {
         currentSelect.dataset.state = 'close';

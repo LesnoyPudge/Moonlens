@@ -384,9 +384,9 @@
                     </li>
                 </ul>
 
-                <a href="#" class="professionals-choose-button choose-button button">
+                <button type="button" class="professionals-choose-button choose-button button">
                     Выбрать клинику
-                </a>
+                </button>
             </div>
         </section>
 
@@ -444,55 +444,79 @@
             </div>
         </section>
 
-        <section class="FAQ">
+        <section class="FAQ" id="FAQ">
             <h3 class="FAQ__section-title section-title">
                 Часто задаваемые вопросы
-            </h3>
+            </h3>   
 
-            <div class="FAQ__questions questions">
+            <div class="FAQ__questions questions" id="FAQ-questions">
                 <div class="questions__col">
 
-                    <div class="questions__item">
-                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
-                        <div class="questions__content">
-                            <p class="questions__title">
-                                Кто разработал дизайны линз?
-                            </p>
+                    <div class="questions__item" data-state>
+                        <div class="questions__header">
+                            <svg class="questions__icon">
+                                <use xlink:href="#question-icon"></use>
+                            </svg>
+                            <h4>Кто разработал конструкцию ночных линз MoonLens?</h4>
+                        </div>
 
-                            <p class="questions__text">
-                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
-                                руководством
-                                легендарного учёного
+                        <div class="questions__text">
+                            <p>
+                                MoonLens созданы признанным мировым лидером в области разработки
+                                специализированных контактных линз – компанией KATT Design Group
+                                Inc. (США, Канада , Австралия), под руководством легендарного 
+                                ученого (США, Канада, Австралия) – доктора Джона Маунтфорда / John Mountford.
                             </p>
                         </div>
                     </div>
 
-                    <div class="questions__item">
-                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
-                        <div class="questions__content">
-                            <p class="questions__title">
-                                Кто разработал дизайны линз?
-                            </p>
+                    <div class="questions__item" data-state>
+                        <div class="questions__header">
+                            <svg class="questions__icon">
+                                <use xlink:href="#question-icon"></use>
+                            </svg>
+                            <h4>Как долго можно использовать ночные линзы Moonlens?</h4>
+                        </div>
 
-                            <p class="questions__text">
-                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
-                                руководством
-                                легендарного учёного
+                        <div class="questions__text">
+                            <p>
+                                Одну пару линз Мунленз можно носить 1 год.
+                                После этого нужно пройти повторное обследование
+                                у специалиста и приобрести новую пару.
                             </p>
+                            <p>
+                                Вовремя меняя ночные линзы и соблюдая все 
+                                рекомендации врача, можно носить без перерыва 
+                                до 60 лет, пока не начнутся возрастные изменения глаз.
+                            </p>
+                            <p>
+                                В мире уже есть пациенты, которые носят ночные линзы 
+                                без перерыва более 30 лет! Это – отличная современная 
+                                альтернатива очкам и мягким контактным линзам!
+                            </p> 
                         </div>
                     </div>
 
-                    <div class="questions__item">
-                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
-                        <div class="questions__content">
-                            <p class="questions__title">
-                                Кто разработал дизайны линз?
-                            </p>
+                    <div class="questions__item" data-state>
+                        <div class="questions__header">
+                            <svg class="questions__icon">
+                                <use xlink:href="#question-icon"></use>
+                            </svg>
+                            <h4>Что будет, если перестать пользоваться линзами?</h4>
+                        </div>
 
-                            <p class="questions__text">
-                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
-                                руководством
-                                легендарного учёного
+                        <div class="questions__text">
+                            <p>
+                                Эффект ортокератологических линз полностью обратим:
+                                если прекратить использовать MoonLens, через 
+                                несколько дней роговица приобретает свою первоначальную
+                                форму и зрение вернется к исходным показателям.
+                            </p>
+                            <p>
+                                Поэтому пациент при желании может в любой момент 
+                                выбрать альтернативный способ коррекции зрения 
+                                (очки, дневные контактные линзы, лазерная коррекция
+                                зрения при достижении 18 лет).
                             </p>
                         </div>
                     </div>
@@ -501,43 +525,85 @@
 
                 <div class="questions__col">
 
-                    <div class="questions__item">
-                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
-                        <div class="questions__content">
-                            <p class="questions__title">
-                                Кто разработал дизайны линз?
+                    <div class="questions__item" data-state>
+                        <div class="questions__header">
+                            <svg class="questions__icon">
+                                <use xlink:href="#question-icon"></use>
+                            </svg>
+                            <h4>Насколько сложно надевать и снимать ночные линзы MoonLens?</h4>
+                        </div>              
+                        
+                        <div class="questions__text">
+                            <p>
+                                Подростки обычно учатся  надевать и снимать 
+                                ночные линзы самостоятельно примерно за неделю. 
+                                Да, каждый день им приходится по утрам и вечерам 
+                                совершать определенный набор действий (помыть руки, 
+                                разложить все аксессуары, закапать капли, надеть или 
+                                снять линзы, промыть контейнер и т.д.), но оно того стоит. 
+                                Достаточно послушать восторженные отзывы тех, кто использует 
+                                ночные линзы, чтобы убедиться в действенности этого метода, 
+                                дарящего людям зрение.
                             </p>
-
-                            <p class="questions__text">
-                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
-                                руководством
-                                легендарного учёного
+                            <p>
+                                Школьникам начальных классов использовать ночные линзы, 
+                                как правило, помогают взрослые. Чаще всего первые 
+                                несколько дней родители одевают линзы детям сами. 
+                                Затем ребенок постепенно учится выполнять все необходимые 
+                                процедуры самостоятельно, но под чутким контролем взрослых, 
+                                что предотвращает возможные ошибки. Родители же обеспечивают 
+                                правильный уход за линзами, ведь от чистоты, стерильности и должного 
+                                соблюдения гигиены во многом зависит результат.
                             </p>
                         </div>
                     </div>
 
-                    <div class="questions__item">
-                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
-                        <div class="questions__content">
-                            <p class="questions__title">
-                                Кто разработал дизайны линз?
+                    <div class="questions__item" data-state> 
+                        <div class="questions__header">
+                            <svg class="questions__icon">
+                                <use xlink:href="#question-icon"></use>
+                            </svg>
+                            <h4>Сколько времени нужно носить ночные линзы для достижения 100% зрения?</h4>
+                        </div> 
+
+                        <div class="questions__text">
+                            <p>
+                                Для получения максимального эффекта пациент должен 
+                                спать в ночных линзах MoonLens в среднем 8 часов в 
+                                сутки (от 6 до 10 часов). Их следует надевать за 15–20 
+                                минут до сна и снимать сразу после пробуждения. После 
+                                снятия линз острота зрения достигает 100% без очков и 
+                                дневных контактных линз.
                             </p>
-
-
+                            <p>
+                                При этом заметное улучшение наступает уже после 
+                                первого использования ночных линз MoonLens! 
+                                Полностью же зрение восстанавливается при низкой 
+                                миопии за 2–3 ночи, при высокой – за одну-две недели.
+                            </p>
                         </div>
                     </div>
 
-                    <div class="questions__item">
-                        <img src="images/questions__image.svg" alt="questions__image" class="questions__image">
-                        <div class="questions__content">
-                            <p class="questions__title">
-                                Кто разработал дизайны линз?
+                    <div class="questions__item" data-state>
+                        <div class="questions__header">
+                            <svg class="questions__icon">
+                                <use xlink:href="#question-icon"></use>
+                            </svg>
+                            <h4>Какую степень близорукости можно корректировать с помощью MoonLens?</h4>
+                        </div> 
+                        
+                        <div class="questions__text">
+                            <p>
+                                Ночные линзы MoonLens позволяют безопасно корректировать 
+                                близорукость слабой, средней и высокой степени до 7,0 
+                                дптр без астигматизма или с астигматизмом до 4,0 дптр , 
+                                благодаря изменению формы верхнего слоя эпителия роговицы.
                             </p>
-
-                            <p class="questions__text">
-                                MoonLens разработанный ведущий американской компании KATT Design Group inc. под
-                                руководством
-                                легендарного учёного
+                            <p>
+                                Важно отметить, что, согласно научным данным, 
+                                толщину эпителия можно уменьшать не более чем на 
+                                20 микрон, что эквивалентно 6,5–7 диоптриям. Поэтому 
+                                безопасно корректировать зрение ночными линзами возможно лишь до 7 диоптрий.
                             </p>
                         </div>
                     </div>
@@ -546,9 +612,9 @@
 
             </div>
 
-            <a href="#" class="FAQ__more-info-button more-info-button">
+            <button type="button" class="FAQ__question-button" id="question-button">
                 Задать свой вопрос
-            </a>
+            </button>
         </section>
 
     </div>
@@ -605,50 +671,4 @@
         <div id="map" style="width: 100%; height: 80vh; max-height: 700px;"></div>
     </section>
 
-
-
-    <!-- Модальные окна -->
-
-    <div class="order-modal" id="order-modal">
-        <div class="order-modal__wrapper"></div>
-        <div class="order-modal__order-box order-box" id="order-box">
-            <div class="order-box__header">
-                <div class="order-box__title">
-                    Запишитесь на приём
-                </div>
-                <svg class="order-box__close-button" id="modal-close">
-                    <use xlink:href="#close-button"></use>
-                </svg>
-            </div>
-            <form class="order-box__order-form order-form" id="order-form">
-    
-                <label class="order-form__label" data-state="outlined">
-                    <span class="order-form__outlined-label">Клиника</span>
-                    <input class="order-form__input" name="clinic-name" type="text" value disabled required>
-                </label>
-    
-                <label class="order-form__label" data-state>
-                    <span class="order-form__outlined-label">Город</span>
-                    <input class="order-form__input" name="clinic-city" type="text" value disabled required>
-                </label>
-    
-                <label class="order-form__label" data-state>
-                    <span class="order-form__outlined-label">Ваше имя</span>
-                    <input class="order-form__input" name="client-name" type="text" value placeholder="Иванов Иван Иванович" >
-                </label>
-    
-                <label class="order-form__label" data-state>
-                    <span class="order-form__outlined-label">Ваш телефон</span>
-                    <input class="order-form__input" name="client-phone" type="tel" value placeholder="8 800 555 35 35" >
-                </label>
-                
-                <label class="order-form__label" data-state>
-                    <span class="order-form__outlined-label">Ваш E-mail</span>
-                    <input class="order-form__input" name="client-email" type="email" value placeholder="myemail@.ru">
-                </label>
-                
-                <button class="order-form__confirm-button confirm-button" name="confirm-button" type="submit">Оставить заявку</button>
-            </form>
-        </div>
-    </div>
 </main>

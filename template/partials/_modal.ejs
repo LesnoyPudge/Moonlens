@@ -1,0 +1,84 @@
+<!-- Модальные окна -->
+
+<div class="modal" id="question-modal" data-state="">
+    <div class="modal__wrapper"></div>
+    <div class="modal__content question-box" id="question-box">
+        <div class="question-box__header">
+            <div class="question-box__title">
+                Задайте свой вопрос
+            </div>
+            <svg class="question-box__close-button modal-close" id="modal-close">
+                <use xlink:href="#close-button"></use>
+            </svg>
+        </div>
+        <form class="question-box__question-form question-form" id="question-form">
+
+            <label class="question-form__label outlined-label" >
+                <span class="question-form__outlined-text outlined-text">Ваше имя</span>
+                <input class="question-form__input outlined-input" name="client-name" type="text" value placeholder="Иванов Иван Иванович" >
+            </label>
+
+            <label class="question-form__label outlined-label" >
+                <span class="question-form__outlined-text outlined-text">Ваш телефон</span>
+                <input class="question-form__input outlined-input" name="client-phone" type="tel" value placeholder="8 800 555 35 35" >
+            </label>
+            
+            <label class="question-form__label outlined-label" >
+                <span class="question-form__outlined-text outlined-text">Ваш E-mail</span>
+                <input class="question-form__input outlined-input" name="client-email" type="email" value placeholder="myemail@.ru">
+            </label>
+
+            <label class="question-form__label outlined-label" >
+                <span class="question-form__outlined-text outlined-text">Текст вопроса</span>
+                <textarea class="question-form__textarea outlined-input" name="textarea" maxlength="255" placeholder="Вопрос, на который не нашли ответа"></textarea>
+            </label>
+            
+            <button class="question-form__confirm-button confirm-button" name="confirm-button" type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="order-modal" data-state="">
+    <div class="modal__wrapper"></div>
+    <div class="modal__content order-box" id="order-box">
+        <div class="order-box__header">
+            <div class="order-box__title">
+                Запишитесь на приём
+            </div>
+            <svg class="order-box__close-button modal-close" id="modal-close">
+                <use xlink:href="#close-button"></use>
+            </svg>
+        </div>
+        <form class="order-box__order-form order-form" id="order-form">
+
+            <label class="order-form__label outlined-label" >
+                <span class="order-form__outlined-text outlined-text">Клиника</span>
+                <input class="order-form__input outlined-input" name="clinic-name" type="text" value disabled required>
+            </label>
+
+            <label class="order-form__label outlined-label" >
+                <span class="order-form__outlined-text outlined-text">Город</span>
+                <input class="order-form__input outlined-input" name="clinic-city" type="text" value disabled required>
+            </label>
+
+            <label class="order-form__label outlined-label" >
+                <span class="order-form__outlined-text outlined-text">Ваше имя</span>
+                <input class="order-form__input outlined-input" name="client-name" type="text" value placeholder="Иванов Иван Иванович" >
+            </label>
+
+            <label class="order-form__label outlined-label" >
+                <span class="order-form__outlined-text outlined-text">Ваш телефон</span>
+                <input class="order-form__input outlined-input" name="client-phone" type="tel" value placeholder="8 800 555 35 35" >
+            </label>
+            
+            <label class="order-form__label outlined-label" >
+                <span class="order-form__outlined-text outlined-text">Ваш E-mail</span>
+                <input class="order-form__input outlined-input" name="client-email" type="email" value placeholder="myemail@.ru">
+            </label>
+            
+            <button class="order-form__confirm-button confirm-button" name="confirm-button" type="submit">Оставить заявку</button>
+        </form>
+    </div>
+</div>
+
+    

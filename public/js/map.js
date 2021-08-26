@@ -1,5 +1,5 @@
 import {setCheck, toggleState} from "./searchBox.js";
-import {modalOpen} from "./orderModal.js";
+import {orderModalOpen} from "./orderModal.js";
 
 export function init() {
     let myMap = new ymaps.Map('map', {
@@ -179,7 +179,7 @@ export function init() {
 
         let objectId = e.target.dataset.clinicId;
         let geoObject = objectManager.objects.getById(objectId);
-        modalOpen(geoObject);
+        orderModalOpen(geoObject);
     });
 
 
