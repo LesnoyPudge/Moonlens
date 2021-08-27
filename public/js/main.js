@@ -1,13 +1,13 @@
 import mapInit from './map.js';
 import searchBoxInit from './searchBox.js';
 import {faqInit} from './FAQ.js';
+import {recommendationInit} from './recommendtion.js';
 
 
-// Создаём карту
-ymaps.ready(mapInit);
-searchBoxInit();
+recommendationInit();
+
 faqInit();
 
+ymaps.ready(mapInit);
 
-
-
+searchBoxInit();

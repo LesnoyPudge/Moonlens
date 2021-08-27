@@ -34,5 +34,7 @@
     "normalize.css": "^8.0.1",
     "typescript": "^4.3.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "swiper": "^7.0.1"
+  }
 }

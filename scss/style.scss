@@ -106,16 +106,15 @@ a {
 }
 
 
-@import "blocks/recommendation";
+@import "blocks/recommendationSlider";
 @import "blocks/faq";
 @import "blocks/map";
 @import "blocks/searchBox";
 
-// Модальные окна
-@import "blocks/modal";
 @import "blocks/outline";
 
-@import "blocks/videoModal";
+// Модальные окна
+@import "blocks/modal";
 @import "blocks/questionModal";
 @import "blocks/orderModal";
 
@@ -636,149 +635,6 @@ a {
     }
     &__choose-button {}
 }
-
-.recommendation {
-    margin-bottom: 150px;
-
-    &__title {
-        font-weight: 700;
-        font-size: 4rem;
-        line-height: 4rem;
-        margin-bottom: 25px;
-        text-align: center;
-    }
-    &__slider {}
-}
-
-.slider {
-
-
-    &__bg-circle {
-        background-color: $bg-button-primary--theme-light; 
-    }
-    &__item {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 40px;
-    }
-    &__header {
-        display: flex;
-        flex-direction: row;
-        column-gap: 20px;
-    }
-    &__name {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        row-gap: 8px;
-    }
-    &__content {
-        border: 1px solid $bg-button-primary--theme-light;
-        box-shadow: 0px 5px 30px rgba(9, 32, 39, 0.12);
-        border-radius: 20px;
-        overflow: hidden;
-        padding: 20px 30px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 20px;
-        position: relative;
-    }
-    &__image>img {
-        width: 80px;
-        height: 80px;
-        border: 3px solid $bg-button-primary--theme-light;
-        border-radius: 50%;
-    }
-    &__title {
-        font-weight: 700;
-        font-size: 2.6rem;
-        line-height: 2.6rem;
-    }
-    &__subtitle {
-        font-size: 1.8rem;
-        line-height: 2rem;
-    }
-    &__text {
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.5rem;
-        line-height: 2.1rem;
-    }
-    &__video {
-        border: 1px solid #0066D9;
-        box-shadow: 0px 5px 30px rgba(9, 32, 39, 0.12);
-        border-radius: 20px;
-        overflow: hidden;
-    }
-}
-
-.bg-circle {
-    position: absolute;
-    width: 205px;
-    height: 205px;
-    border-radius: 50%;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-
-.video {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-
-    &__image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        z-index: -1;
-    }
-    &__content {
-        margin-right: 42px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        column-gap: 15px;
-    }
-    &__name {
-        display: flex;
-        flex-direction: column;
-        
-        row-gap: 8px;
-    }
-    &__title {
-        font-weight: 700;
-        font-size: 2.6rem;
-        line-height: 2.6rem;
-    }
-    &__subtitle {
-        font-size: 1.8rem;
-        line-height: 2rem;
-    }
-    &__play-button {
-        
-    }
-}
-
-.play-button {
-    display: flex;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    justify-content: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    align-items: center;
-    background-color: $bg-primary--theme--light;
-    cursor: pointer;
-
-    &__icon {
-        width: 35px;
-        height: 35px;
-    }
-}
-
 
 
 .footer {

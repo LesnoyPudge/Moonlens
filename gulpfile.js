@@ -46,7 +46,7 @@ const path = {
         ts: srcPath + "ts/**/*.ts",
         css: srcPath + "css/**/*.css",
         scss: srcPath + "scss/**/*.scss",
-        images: srcPath + "images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "imagesPre/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts: srcPath + "fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     clean: "./" + distPath

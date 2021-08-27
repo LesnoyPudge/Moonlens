@@ -390,58 +390,161 @@
             </div>
         </section>
 
-        <section class="recommendation">
+        <section class="recommendation" id="recommendation">
             <h3 class="recommendation__title">
                 Рекомендации врачей
             </h3>
-            <div class="recommendation__slider slider">
-                <div class="slider__item">
-                    <div class="slider__content">
-                        <span class="slider__bg-circle bg-circle"></span>
-                        <div class="slider__header">
-                            <picture class="slider__image">
-                                <source srcset="images/recommendation__image1.webp" type="image/webp">
-                                <img src="images/recommendation__image1.png" alt="recommendation__image1" class="">
+
+            <!-- Swiper begin -->
+            <div class="recommendation__slider swiper">
+                <div class="swiper-wrapper">
+                    <div class="slider-item swiper-slide">
+                        <div class="slider-item__content">
+                            <span class="slider-item__bg-circle bg-circle"></span>
+                            <div class="slider-item__header">
+                                <picture class="slider-item__image">
+                                    <source srcset="images/recommendation__image1.webp" type="image/webp">
+                                    <img src="images/recommendation__image1.png" alt="recommendation__image1" class="">
+                                </picture>
+                                <div class="slider-item__name">
+                                    <h5 class="slider-item__title">
+                                        Анна
+                                    </h5>
+                                    <p class="slider-item__subtitle">
+                                        Хирург
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="slider-item__text">
+                                Quis occaecat id mollit sint est ex magna proident pariatur reprehenderit excepteur
+                                officia dolor. Cillum officia
+                                deserunt commodo Lorem. Esse nulla elit eu laboris deserunt non elit deserunt. Culpa
+                                Lorem aliquip in elit duis occaecat
+                                ipsum. Incididunt laborum deserunt ad sint deserunt commodo irure incididunt minim...
+                            </p>
+                        </div>
+    
+                        <div class="slider-item__video video">
+                            <picture class="video__image">
+                                <source srcset="images/video__image1.webp" type="image/webp">
+                                <img src="images/video__image1.png" alt="video__image1" class="">
                             </picture>
-                            <div class="slider__name">
-                                <h5 class="slider__title">
-                                    Анна
-                                </h5>
-                                <p class="slider__subtitle">
-                                    Хирург
-                                </p>
+                            <div class="video__content">                               
+                                <svg class="video__video-play-button video-play-button" id="video-play-button" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                                    <use xlink:href="#play-button"></use>
+                                </svg>
+                                <div class="video__name">
+                                    <h5 class="video__title">
+                                        Анна
+                                    </h5>
+                                    <p class="video__subtitle">
+                                        Хирург
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <p class="slider__text">
-                            Quis occaecat id mollit sint est ex magna proident pariatur reprehenderit excepteur
-                            officia dolor. Cillum officia
-                            deserunt commodo Lorem. Esse nulla elit eu laboris deserunt non elit deserunt. Culpa
-                            Lorem aliquip in elit duis occaecat
-                            ipsum. Incididunt laborum deserunt ad sint deserunt commodo irure incididunt minim...
-                        </p>
                     </div>
 
-                    <div class="slider__video video">
-                        <picture class="video__image">
-                            <source srcset="images/video__image1.webp" type="image/webp">
-                            <img src="images/video__image1.png" alt="video__image1" class="">
-                        </picture>
-                        <div class="video__content">
-                            <div class="video__play-button play-button">
-                                <img src="images/video__play-button.svg" alt="" class="play-button__icon">
+                    <div class="slider-item swiper-slide">
+                        <div class="slider-item__content">
+                            <span class="slider-item__bg-circle bg-circle"></span>
+                            <div class="slider-item__header">
+                                <picture class="slider-item__image">
+                                    <source srcset="images/recommendation__image1.webp" type="image/webp">
+                                    <img src="images/recommendation__image1.png" alt="recommendation__image1" class="">
+                                </picture>
+                                <div class="slider-item__name">
+                                    <h5 class="slider-item__title">
+                                        Анна
+                                    </h5>
+                                    <p class="slider-item__subtitle">
+                                        Хирург
+                                    </p>
+                                </div>
                             </div>
-                            <div class="video__name">
-                                <h5 class="video__title">
-                                    Анна
-                                </h5>
-                                <p class="video__subtitle">
-                                    Хирург
-                                </p>
+                            <p class="slider-item__text">
+                                Quis occaecat id mollit sint est ex magna proident pariatur reprehenderit excepteur
+                                officia dolor. Cillum officia
+                                deserunt commodo Lorem. Esse nulla elit eu laboris deserunt non elit deserunt. Culpa
+                                Lorem aliquip in elit duis occaecat
+                                ipsum. Incididunt laborum deserunt ad sint deserunt commodo irure incididunt minim...
+                            </p>
+                        </div>
+    
+                        <div class="slider-item__video video">
+                            <picture class="video__image">
+                                <source srcset="images/video__image1.webp" type="image/webp">
+                                <img src="images/video__image1.png" alt="video__image1" class="">
+                            </picture>
+                            <div class="video__content">                               
+                                <svg class="video__video-play-button video-play-button" id="video-play-button" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                                    <use xlink:href="#play-button"></use>
+                                </svg>
+                                <div class="video__name">
+                                    <h5 class="video__title">
+                                        Анна
+                                    </h5>
+                                    <p class="video__subtitle">
+                                        Хирург
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-item swiper-slide">
+                        <div class="slider-item__content">
+                            <span class="slider-item__bg-circle bg-circle"></span>
+                            <div class="slider-item__header">
+                                <picture class="slider-item__image">
+                                    <source srcset="images/recommendation__image1.webp" type="image/webp">
+                                    <img src="images/recommendation__image1.png" alt="recommendation__image1" class="">
+                                </picture>
+                                <div class="slider-item__name">
+                                    <h5 class="slider-item__title">
+                                        Анна
+                                    </h5>
+                                    <p class="slider-item__subtitle">
+                                        Хирург
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="slider-item__text">
+                                Quis occaecat id mollit sint est ex magna proident pariatur reprehenderit excepteur
+                                officia dolor. Cillum officia
+                                deserunt commodo Lorem. Esse nulla elit eu laboris deserunt non elit deserunt. Culpa
+                                Lorem aliquip in elit duis occaecat
+                                ipsum. Incididunt laborum deserunt ad sint deserunt commodo irure incididunt minim...
+                            </p>
+                        </div>
+    
+                        <div class="slider-item__video video">
+                            <picture class="video__image">
+                                <source srcset="images/video__image1.webp" type="image/webp">
+                                <img src="images/video__image1.png" alt="video__image1" class="">
+                            </picture>
+                            <div class="video__content">                               
+                                <svg class="video__video-play-button video-play-button" id="video-play-button" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                                    <use xlink:href="#play-button"></use>
+                                </svg>
+                                <div class="video__name">
+                                    <h5 class="video__title">
+                                        Анна
+                                    </h5>
+                                    <p class="video__subtitle">
+                                        Хирург
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>     
             </div>
+            <!-- Swiper end -->
+
         </section>
 
         <section class="FAQ" id="FAQ">
