@@ -1,0 +1,45 @@
+.footer {
+    color: $font-secondary--theme--light;
+    background-color: $bg-footer;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        margin: 25px 0;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    &__item {}
+    &__social {
+        justify-content: center;
+        margin-bottom: 15px;
+        height: 34px;
+        column-gap: 10px;
+    }
+    &__copyright {
+
+    }
+    &__logo {}
+    &__social-icon {
+        width: 34px;
+        height: 34px;
+        transition: 0.1s linear;
+        fill: $bg-footer;
+
+        &:hover {
+            fill: #0066D9;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.personal-data {
+    &__link {
+        cursor: pointer;
+        text-decoration: underline white 1px;
+        text-underline-offset: 3px;
+    }
+}

@@ -1,0 +1,78 @@
+.intro {
+    color: $font-secondary--theme--light;
+
+    &__bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        max-height: 816px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../images/bg-image.jpg');
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-size: 5rem;
+        font-weight: 800;
+        margin-bottom: 21px;
+    }
+    &__subtitle {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 35px;
+    }
+    &__buttons {
+        display: flex;
+        align-items: center;
+        margin-bottom: 85px;
+        column-gap: 28px;
+    }
+    &__clinic-choose-button {}
+    &__more-info-button {}
+    &__cards {}
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    color: $font-primary--theme--light;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: $bg-primary--theme--light;
+        color: $font-primary--theme--light;
+        box-shadow: 0px 5px 30px rgba(9, 32, 39, 0.12);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    &__image {
+        width: 100%;
+        height: 200px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+    &__title {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 2.6rem;
+    }
+    &__text {
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+}

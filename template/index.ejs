@@ -1,7 +1,85 @@
 <% layout('./layout/mainPage') -%>
-<% block('title', 'Moonlens'); -%>
+<% block('title', 'MoonLens'); -%>
 
 <main class="main">
+
+    <section class="intro">
+        <picture class="intro__bg-image">
+            <source srcset="images/bg-image.webp" type="image/webp">
+            <img src="images/bg-image.jpg" alt="" class="image">
+        </picture>
+
+        <div class="container">
+            <div class="intro__content">
+                <h1 class="intro__title">
+                    Ночные линзы Moon Lens — <br> Отличное зрение на весь день
+                </h1>
+
+                <p class="intro__subtitle">
+                    Ощути свою свободу с ночными линзами MoonLens! <br> Без очков. Без операций. Без дневных линз.
+                </p>
+    
+                <div class="intro__buttons">
+                    <button type="button" data-scroll="#map" class="intro__clinic-choose-button clinic-choose-button button">
+                        Выбрать клинику
+                    </button>
+                    <button class="intro__more-info-button more-info-button button">
+                        Как это работает?
+                    </button>
+                </div>
+
+                <div class="intro__cards cards">
+
+                    <div class="cards__item">
+                        <picture class="cards__image">
+                            <source srcset="images/card-image-1.webp" type="image/webp">
+                            <img src="images/card-image-1.jpg" alt="card__image1" class="image">
+                        </picture>
+                        <div class="cards__content">
+                            <h4 class="cards__title">
+                                Свобода <br> движения
+                            </h4>
+                            <p class="cards__text">
+                                Веди активный образ жизни где <br> бы то ни было и при любых условиях
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="cards__item">
+                        <picture class="cards__image">
+                            <source srcset="images/card-image-2.webp" type="image/webp">
+                            <img src="images/card-image-2.jpg" alt="card__image2" class="image">
+                        </picture>
+                        <div class="cards__content">
+                            <h4 class="cards__title">
+                                Свобода <br> стремлений
+                            </h4>
+                            <p class="cards__text">
+                                Занимайся любыми видами спорта <br> и достигай новых вершин
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="cards__item">
+                        <picture class="cards__image">
+                            <source srcset="images/card-image-3.webp" type="image/webp">
+                            <img src="images/card-image-3.jpg" alt="card__image3" class="image">
+                        </picture>
+                        <div class="cards__content">
+                            <h4 class="cards__title">
+                                Свобода общения <br> и самовыражения
+                            </h4>
+                            <p class="cards__text">
+                                Раскрой свой потенциал общения <br> и самовыражения
+                            </p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
         <section class="our-clients">
 
@@ -12,43 +90,43 @@
                 Кому подойдут MoonLens?
             </h3>
 
-            <div class="our-clients__preview">
+            <div class="our-clients__preview preview">
 
-                <div class="preview-item">
-                    <picture class="preview-item__image">
+                <div class="preview__item">
+                    <picture class="preview__image">
                         <source srcset="images/preview__image1.webp" type="image/webp">
                         <img src="images/preview__image1.png" alt="preview__image1" class="image">
                     </picture>
-                    <h5 class="preview-item__title">
+                    <h5 class="preview__title">
                         Пациенты от 6 лет до 60 лет
                     </h5>
-                    <p class="preview-item__text">
+                    <p class="preview__text">
                         с близорукость до -7,00 диоптрий <br> без или с астигматизмом до -4,00 диоптрий
                     </p>
                 </div>
 
-                <div class="preview-item">
-                    <picture class="preview-item__image">
+                <div class="preview__item">
+                    <picture class="preview__image">
                         <source srcset="images/preview__image2.webp" type="image/webp">
                         <img src="images/preview__image2.png" alt="preview__image2" class="image">
                     </picture>
-                    <h5 class="preview-item__title">
+                    <h5 class="preview__title">
                         Дети и подростки
                     </h5>
-                    <p class="preview-item__text">
+                    <p class="preview__text">
                         с целью торможения прогрессирования близорукости
                     </p>
                 </div>
 
-                <div class="preview-item">
-                    <picture class="preview-item__image">
+                <div class="preview__item">
+                    <picture class="preview__image">
                         <source srcset="images/preview__image3.webp" type="image/webp">
                         <img src="images/preview__image3.png" alt="preview__image3" class="image">
                     </picture>
-                    <h5 class="preview-item__title">
+                    <h5 class="preview__title">
                         Взрослые пациенты
                     </h5>
-                    <p class="preview-item__text">
+                    <p class="preview__text">
                         с непереносимостью мягких линз, противопоказания к лазерной коррекции, а также в силу
                         специфики профессии
                     </p>
@@ -72,7 +150,7 @@
     </section>
 
     <div class="container">
-        <section class="how-it-works">
+        <section class="how-it-works" id="how-it-works">
             <picture class="how-it-works__image">
                 <source srcset="images/how-it-works__image.webp" type="image/webp">
                 <img src="images/how-it-works__image.png" alt="how-it-works__image" class="image">
@@ -106,9 +184,9 @@
                         нужно надевать очки или дневные линзы!
                     </li>
                 </ul>
-                <a href="#" class="how-it-works__more-info more-info-button">
+                <button type="button" class="button how-it-works__more-info-button more-info-button">
                     Подробнее о линзах MoonLens
-                </a>
+                </button>
             </div>
         </section>
 
@@ -118,9 +196,9 @@
                     <source srcset="images/advantages__image1.webp" type="image/webp">
                     <img src="images/advantages__image1.svg" alt="advantages__image1" class="">
                 </picture>
-                <div class="advantages__title">
+                <h4 class="advantages__title">
                     Удобны<br>при ношении
-                </div>
+                </h4>
                 <p class="advantages__text">
                     Уникальные край линзы Мунленз делает ношение линзы более комфортным. Пациенты<br>не чувствуют
                     линзы во время сна
@@ -131,9 +209,9 @@
                     <source srcset="images/advantages__image2.webp" type="image/webp">
                     <img src="images/advantages__image2.png" alt="advantages__image2" class="">
                 </picture>
-                <div class="advantages__title">
+                <h4 class="advantages__title">
                     Простота ухода<br>и использования
-                </div>
+                </h4>
                 <p class="advantages__text">
                     Мунленз легко надеть и снять. Уход за линзами не отличается<br>от ухода за другими ЖКЛ линзами
                 </p>
@@ -143,9 +221,9 @@
                     <source srcset="images/advantages__image3.webp" type="image/webp">
                     <img src="images/advantages__image3.png" alt="advantages__image3" class="">
                 </picture>
-                <div class="advantages__title">
+                <h4 class="advantages__title">
                     Длительный срок службы
-                </div>
+                </h4>
                 <p class="advantages__text">
                     Линзы носятся 1 год, по истечении года требуется замена на новую пару линз
                 </p>
@@ -155,9 +233,9 @@
                     <source srcset="images/advantages__image4.webp" type="image/webp">
                     <img src="images/advantages__image4.png" alt="advantages__image4" class="">
                 </picture>
-                <div class="advantages__title">
+                <h4 class="advantages__title">
                     Эффект<br>обратимый
-                </div>
+                </h4>
                 <p class="advantages__text">
                     При прекращении ношении Мунленз зрение возвращается<br>в исходное состояние и можно выбрать
                     альтернативный способ коррекции
@@ -189,9 +267,9 @@
                         Разрешены FDA для серийного применения в США.
                     </li>
                 </ul>
-                <a href="#" class="leader__more-info more-info-button">
-                    Подробнее о создателях MoonLens
-                </a>
+                <button type="button" class="button leader__more-info more-info-button">
+                    Подробнее о линзах MoonLens
+                </button>
             </div>
 
             <picture class="leader__image">
@@ -253,9 +331,9 @@
                         случаях
                     </li>
                 </ul>
-                <a href="#" class="safety__more-info-button more-info-button">
+                <button type="button" class="button safety__more-info-button more-info-button">
                     Подробнее о линзах MoonLens
-                </a>
+                </button>
             </div>
         </section>
     </div>
@@ -289,7 +367,7 @@
     </section>
 
     <div class="container">
-        <section class="materials">
+        <section class="materials" id="materials">
             <div class="materials__content">
                 <h3 class="materials__section-title section-title">
                     Лучшие газопроницаемые материалы
@@ -306,40 +384,40 @@
                         Выбор материала не влияет на стоимость линзы!
                     </li>
                 </ul>
-                <a href="#" class="materials__more-info-button more-info-button">
+                <button type="button" class="button materials__more-info-button more-info-button">
                     Подробнее о материалах
-                </a>
+                </button>
             </div>
-            <div class="materials__links links">
-                <a href="#" class="links__item">
-                    <div class="links__title">
+            <div class="materials__partner-list partner-list">
+                <a href="#" class="partner-list__item" target="__blank">
+                    <div class="partner-list__title">
                         Boston® XO / XO2
                     </div>
-                    <p class="links__subtitle">
+                    <p class="partner-list__subtitle">
                         Bausch Health Inc., США
                     </p>
                 </a>
-                <a href="#" class="links__item">
-                    <div class="links__title">
+                <a href="#" class="partner-list__item" target="__blank">
+                    <div class="partner-list__title">
                         Optimum® Extra / Extreme / Infinite
                     </div>
-                    <p class="links__subtitle">
+                    <p class="partner-list__subtitle">
                         Contamac Inc., Великобритания
                     </p>
                 </a>
-                <a href="#" class="links__item">
-                    <div class="links__title">
+                <a href="#" class="partner-list__item" target="__blank">
+                    <div class="partner-list__title">
                         Paragon® HDS
                     </div>
-                    <p class="links__subtitle">
+                    <p class="partner-list__subtitle">
                         Paragon Vision Sciences Inc., США
                     </p>
                 </a>
-                <a href="#" class="links__item">
-                    <div class="links__title">
+                <a href="#" class="partner-list__item" target="__blank">
+                    <div class="partner-list__title">
                         Acuity® 100 / 200
                     </div>
-                    <p class="links__subtitle">
+                    <p class="partner-list__subtitle">
                         Acuity Polymers Inc., США
                     </p>
                 </a>
@@ -384,7 +462,7 @@
                     </li>
                 </ul>
 
-                <button type="button" class="professionals-choose-button choose-button button">
+                <button type="button"  data-scroll="#map" class="professionals-clinic-choose-button clinic-choose-button button">
                     Выбрать клинику
                 </button>
             </div>
@@ -715,7 +793,7 @@
 
             </div>
 
-            <button type="button" class="FAQ__question-button" id="question-button">
+            <button type="button" class="FAQ__question-button button" id="question-button">
                 Задать свой вопрос
             </button>
         </section>

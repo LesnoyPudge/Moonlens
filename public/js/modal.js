@@ -4,24 +4,19 @@ export function modalOpen(modalWindow) {
 
     if (modalWindow.style.display == 'none' || !modalWindow.style.display) {
         document.body.style.overflow = 'hidden';
-        modalWindow.style.display = 'block';
-        
-        setTimeout(() => {
-            toggleState(modalWindow);
-        }, 0);
+
+        // Добавляем отступ шириной равной ширине скролла
+        document.body.style.paddingRight = document.body.scrollWidth - window.innerWidth + 'px';
+
+        toggleState(modalWindow);
     }
 }
 
 export function modalClose(modalWindow) {
     document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
 
     toggleState(modalWindow);
-
-    setTimeout(() => {
-        if (modalWindow.dataset.state = 'close') {
-            modalWindow.style.display = 'none';
-        }
-    }, 200); 
 }
 
 export function emptyFieldsValidate(modalWindow, modalBox, fields) {

@@ -1,0 +1,45 @@
+.materials {
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: repeat(3, auto);
+    margin-bottom: 100px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__section-title {
+    }
+    &__list {
+    }
+    &__more-info-button {}
+
+    &__image>img {
+        border-radius: 8px;
+    }
+}
+
+.partner-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 36px;
+
+    &__item {
+        opacity: 0.4;
+        transition: 0.1s linear;
+    }
+    &__item:hover {
+        opacity: 1;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+    &__subtitle {
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+    }
+}

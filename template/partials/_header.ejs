@@ -1,123 +1,65 @@
 <header class="header">
-    <picture>
-        <source srcset="images/header-main-image.webp" type="image/webp">
-        <img src="images/header-main-image.png" alt="header-main-image" class="header__main-image">
-    </picture>
+    
     <div class="container">
 
-        <div class="header__top">
+        <div class="header__navbar navbar">
 
-            <a class="header__logo logo" href="#">
+            <a class="navbar__logo" href="#">
                 <picture>
                     <source srcset="images/logo.webp" type="image/webp">
-                    <img src="images/logo.png" alt="logo" class="loog__logo-image">
+                    <img src="images/logo.png" alt="logo">
                 </picture>
             </a>
 
-            <nav class="header__nav nav">
-                <a class="nav__item" href="#about">О линзах MoonLens</a>
-                <a class="nav__item" href="#useful">Полезные материалы</a>
-                <a class="nav__item" href="#testimonials">Отзывы</a>
-                <a class="nav__item" href="#map">Где купить?</a>
+            <nav class="navbar__nav nav">
+                <a class="nav__item" href="#" data-scroll="#how-it-works">О линзах MoonLens</a>
+                <a class="nav__item" href="#" data-scroll="#materials">Материалы</a>
+                <a class="nav__item" href="#" data-scroll="#recommendation">Рекомандации</a>
+                <a class="nav__item" href="#" data-scroll="#map">Где купить?</a>
             </nav>
 
-            <div class="header__language language">
-                <picture>
+            <!-- <div class="navbar__language language">
+                <picture class="language__icon">
                     <source srcset="images/RU.webp" type="image/webp">
-                    <img src="images/RU.png" alt="lang-icon" class="language__icon">
+                    <img src="images/RU.png" alt="lang-icon">
                 </picture>
                 <select class="language__select">
-                    <option value="1">
-                        <div class="language__text">Русский</div>
-                    </option>
-                    <option value="2">
-                        <div class="language__text">English</div>
-                    </option>
+                    <option class="language__option" value="1">Русский</option>
+                    <option class="language__option" value="2">English</option>
                 </select>
-            </div>
+            </div> -->
 
-            <div class="header__social social">
-                <a href="#" class="social__item">
-                    <img class="header__social-icon social__icon" src="images/instagramm.svg" alt="">
+            <div class="navbar__social social">
+                <a href="#" class="social__item" target="_blank">
+                    <svg class="navbar__social-icon social__icon">
+                        <use xlink:href="#twitter"></use>
+                    </svg>
                 </a>
-                <a href="#" class="social__item">
-                    <img class="header__social-icon social__icon" src="images/instagramm.svg" alt="">
+                <a href="#" class="social__item" target="_blank">
+                    <svg class="navbar__social-icon social__icon">
+                        <use xlink:href="#vk"></use>
+                    </svg>
                 </a>
-                <a href="#" class="social__item">
-                    <img class="header__social-icon social__icon" src="images/instagramm.svg" alt="">
+                <a href="#" class="social__item" target="_blank">
+                    <svg class="navbar__social-icon social__icon">
+                        <use xlink:href="#rss"></use>
+                    </svg>
                 </a>
-                <a href="#" class="social__item">
-                    <img class="header__social-icon social__icon" src="images/instagramm.svg" alt="">
+                <a href="#" class="social__item" target="_blank">
+                    <svg class="navbar__social-icon social__icon">
+                        <use xlink:href="#facebook"></use>
+                    </svg>
                 </a>
-                <a href="#" class="social__item">
-                    <img class="header__social-icon social__icon" src="images/instagramm.svg" alt="">
+                <a href="#" class="social__item" target="_blank">
+                    <svg class="navbar__social-icon social__icon">
+                        <use xlink:href="#ok"></use>
+                    </svg>
                 </a>
-                <a href="#" class="social__item">
-                    <img class="header__social-icon social__icon" src="images/instagramm.svg" alt="">
+                <a href="#" class="social__item" target="_blank">
+                    <svg class="navbar__social-icon social__icon">
+                        <use xlink:href="#instagramm"></use>
+                    </svg>
                 </a>
-            </div>
-
-        </div>
-
-        <div class="header__content">
-
-            <h1 class="header__title">
-                Ночные линзы Moon Lens — <br> Отличное зрение на весь день
-            </h1>
-            <p class="header__text">
-                Ощути свою свободу с ночными линзами MoonLens! <br> Без очков. Без операций. Без дневных линз.
-            </p>
-
-            <div class="header__buttons">
-                <a class="choose-button button">
-                    Выбрать клинику
-                </a>
-                <a class="how-button button">
-                    Как это работает?
-                </a>
-            </div>
-
-            <div class="header__cards">
-
-                <div class="card">
-                    <picture class="card__image">
-                        <source srcset="images/card__image1.webp" type="image/webp">
-                        <img src="images/card__image1.png" alt="card__image1" class="image">
-                    </picture>
-                    <h4 class="card__title">
-                        Свобода <br> движения
-                    </h4>
-                    <p class="card__text">
-                        Веди активный образ жизни где <br> бы то ни было и при любых условиях
-                    </p>
-                </div>
-
-                <div class="card">
-                    <picture class="card__image">
-                        <source srcset="images/card__image2.webp" type="image/webp">
-                        <img src="images/card__image2.png" alt="card__image2" class="image">
-                    </picture>
-                    <h4 class="card__title">
-                        Свобода <br> стремлений
-                    </h4>
-                    <p class="card__text">
-                        Занимайся любыми видами спорта <br> и достигай новых вершин
-                    </p>
-                </div>
-
-                <div class="card">
-                    <picture class="card__image">
-                        <source srcset="images/card__image3.webp" type="image/webp">
-                        <img src="images/card__image3.png" alt="card__image3" class="image">
-                    </picture>
-                    <h4 class="card__title">
-                        Свобода общения <br> и самовыражения
-                    </h4>
-                    <p class="card__text">
-                        Раскрой свой потенциал общения <br> и самовыражения
-                    </p>
-                </div>
-
             </div>
 
         </div>

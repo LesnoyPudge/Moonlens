@@ -3,7 +3,7 @@ import {modalOpen, modalClose, emptyFieldsValidate, cleanFields} from './modal.j
 let modalWindow = document.querySelector('#order-modal');
 let orderBox = modalWindow.querySelector('#order-box');
 let wrapper = modalWindow.querySelector('[class$=__wrapper]');
-let closeButton = orderBox.querySelector('#modal-close');
+let closeButton = orderBox.querySelector('.modal-close');
 let orderForm = orderBox.querySelector('#order-form');
 let fieldsList = orderForm.querySelectorAll('.outlined-input');
 

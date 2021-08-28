@@ -1,0 +1,18 @@
+* {
+    &::-webkit-scrollbar {
+        width: 7px;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 7px;
+        transition: background-color 0.2s linear;
+        background-color: #223c50;
+
+        &:hover {
+            background-color: #3476a8;
+        }
+    }
+    &::-webkit-scrollbar-track {
+        // box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    }
+}

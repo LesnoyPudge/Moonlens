@@ -17,12 +17,6 @@
         color: #153862;
         border: 0;
         border-bottom: 2px solid #153862;
-        cursor: pointer;
-        transition: 0.1s linear;
-
-        &:hover {
-            transform: translate(0, 2px);
-        }
     }
 }
 
@@ -83,6 +77,6 @@
         transition: 0.2s linear;
         height: 0px;
         opacity: 0; 
-        gap: 16px; 
+        gap: 16px;
     }
 }

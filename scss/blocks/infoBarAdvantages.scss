@@ -1,0 +1,24 @@
+.info-bar-advantages {
+    background-color: $bg-info-bar;
+    margin-bottom: 70px;
+
+    &__content {
+        margin: 52px auto;
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__item {
+        text-align: center;
+        align-items: center;
+    }
+    &__image {
+        width: 107px;
+        height: 107px;
+        margin-bottom: 20px;
+    }
+    &__text {
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+    }
+}

@@ -5,12 +5,12 @@ let questionBox = modalWindow.querySelector('#question-box');
 let questionForm = questionBox.querySelector('#question-form');
 let textArea = questionForm.querySelector('[name=textarea]');
 let wrapper = modalWindow.querySelector('[class$=__wrapper]');
-let closeButton = questionBox.querySelector('#modal-close');
+let closeButton = questionBox.querySelector('.modal-close');
 let fieldsList = questionForm.querySelectorAll('.outlined-input');
 
 
 export function questionModalOpen() {
-    console.log('faqModalOpen');
+
     modalOpen(modalWindow);
 
     textArea.addEventListener('input', onTextAreaInput);

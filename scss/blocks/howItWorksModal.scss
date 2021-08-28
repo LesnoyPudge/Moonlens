@@ -1,0 +1,36 @@
+.how-it-works-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    height: auto;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+
+
+    &__header {
+        position: relative;
+        text-align: center;
+    }
+    &__title {
+        margin-top: 30px;
+        font-size: 3.4rem;
+        font-weight: 700;
+    }
+    &__close-button {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 7px;
+        right: 7px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+}

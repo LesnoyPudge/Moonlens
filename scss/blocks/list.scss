@@ -1,0 +1,13 @@
+.list {
+    display: grid;
+    row-gap: 20px;
+
+    
+    &__item {
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+    }
+    &__item::before {
+        content: url("../images/li-decoration.svg");
+    }
+}
