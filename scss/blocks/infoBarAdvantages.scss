@@ -22,3 +22,27 @@
         line-height: 2.2rem;
     }
 }
+
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+    .info-bar-advantages {
+        &__content {
+            margin: 25px auto;  
+        }
+    }
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+    .info-bar-advantages {
+        margin-bottom: 40px;
+        
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+}

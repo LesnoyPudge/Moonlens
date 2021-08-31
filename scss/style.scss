@@ -61,6 +61,7 @@ body {
     background-color: $bg-primary--theme--light;
     color: $font-primary--theme--light;
     overflow-x: hidden;
+    transition: 0s;
 }
 
 main {
@@ -82,37 +83,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
-@import 'blocks/scrollbar';
-@import 'blocks/animations';
-
-// Секции/элементы
-@import "blocks/header";
-@import "blocks/intro";
-@import "blocks/outClients";
-@import "blocks/howItWorks";
-@import "blocks/adventages";
-@import "blocks/leader";
-@import "blocks/infoBar.scss";
-@import "blocks/safety";
-@import "blocks/infoBarAdvantages";
-@import "blocks/list";
-@import "blocks/materials";
-@import "blocks/professionals";
-@import "blocks/recommendationSlider";
-@import "blocks/faq";
-@import "blocks/map";
-@import "blocks/searchBox";
-@import "blocks/footer";
-
-// Модальные окна
-@import "blocks/outline";
-@import "blocks/modal";
-@import "blocks/howItWorksModal";
-@import "blocks/questionModal";
-@import "blocks/orderModal";
-
-
 .image {
     width: 100%;
     height: 100%;
@@ -153,4 +123,49 @@ a {
     border-color: inherit;
     border-bottom: 2px solid;
     font-weight: 800;
+}
+
+@import 'blocks/scrollbar';
+@import 'blocks/animations';
+
+// Секции/элементы
+@import "blocks/header";
+@import "blocks/intro";
+@import "blocks/ourClients";
+@import "blocks/howItWorks";
+@import "blocks/adventages";
+@import "blocks/leader";
+@import "blocks/infoBar.scss";
+@import "blocks/safety";
+@import "blocks/infoBarAdvantages";
+@import "blocks/list";
+@import "blocks/materials";
+@import "blocks/professionals";
+@import "blocks/recommendationSlider";
+@import "blocks/faq";
+@import "blocks/map";
+@import "blocks/searchBox";
+@import "blocks/footer";
+
+// Модальные окна
+@import "blocks/outline";
+@import "blocks/modal";
+@import "blocks/howItWorksModal";
+@import "blocks/questionModal";
+@import "blocks/orderModal";
+
+
+
+
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+
 }

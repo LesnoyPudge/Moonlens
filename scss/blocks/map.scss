@@ -84,6 +84,9 @@
     position: relative;
 
     &__search {}
+    * {
+        transition-duration: 0s;  
+    }
 }
 
 .map-icon {
@@ -94,4 +97,17 @@
     &[data-state=open] {
         fill: #0066D9;
     }
+}
+
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+
 }

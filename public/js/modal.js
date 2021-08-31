@@ -3,11 +3,13 @@ import {toggleState} from './searchBox.js';
 export function modalOpen(modalWindow) {
 
     if (modalWindow.style.display == 'none' || !modalWindow.style.display) {
-        document.body.style.overflow = 'hidden';
+        
 
         // Добавляем отступ шириной равной ширине скролла
-        document.body.style.paddingRight = document.body.scrollWidth - window.innerWidth + 'px';
+        console.log(`${window.innerWidth} - ${document.body.clientWidth}`)
 
+        document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + 'px';
+        document.body.style.overflow = 'hidden';
         toggleState(modalWindow);
     }
 }
@@ -29,7 +31,7 @@ export function emptyFieldsValidate(modalWindow, modalBox, fields) {
             validated = false;
         } else {
             field.parentElement.style.borderColor = '';
-        };
+        }
     });
 
     if (validated) {

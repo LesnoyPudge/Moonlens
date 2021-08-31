@@ -54,95 +54,27 @@
     }
 }
 
+@media (max-width: 1200px) {
 
-// .header {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     margin-top: 45px;
-//     margin-bottom: 95px;
-//     position: relative;
-//     height: 100%;
-//     max-height: 890px;
-//     background-color: rgb(13, 13, 150);
-//     color: $font-secondary--theme--light;
-    
+}
+@media (max-width: 992px) {
+    .header {
+        &__navbar {
+            padding-bottom: 50px;
+        }
+    }
+    .navbar {
+        &__nav {
+            display: none;
+        }
+        &__social {
+            display: none;
+        }
+    }
+}
+@media (max-width: 768px) {
 
-//     &__main-image {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         z-index: -1;
-//         width: 100%;
-//         object-fit: cover;
-//         object-position: center;
-//         height: 90%;
-//     }
-//     &__logo{
-//         height: 37px;
-//     }
-//     &__nav{
-//         margin-left: 78px;
-//         margin-right: 53px;
-//     }
-//     &__language{
-//         margin-right: 36px;
-//     }
-//     &__social{
-//         //height: 27px;
-//         line-height: 0;
-//         column-gap: 4px;
-//     }
-//     &__content {
-//         display: flex;
-//         flex-direction: column;
-//     }
-//     &__title {
-//         font-size: 5rem;
-//         font-weight: 800;
-//         line-height: 5rem;
-//         margin-bottom: 21px;
-//     }
-//     &__text {
-//         font-size: 2.6rem;
-//         line-height: 3.1rem;
-//         margin-bottom: 35px;
-//     }
-//     &__buttons {
-//         display: flex;
-//         align-items: center;
-//         margin-bottom: 85px;
-//         column-gap: 28px;
-//     }
-//     &__social-icon {
-//         width: 27px;
-//         height: 27px;
-//     }
-// }
+}
+@media (max-width: 576px) {
 
-// .nav {
-//     display: flex;
-//     column-gap: 35px;
-//     font-size: 1.8rem;
-
-//     &__item {}
-// }
-
-// .language {
-//     &__icon {}
-//     &__select {}
-//     &__text {}
-// }
-
-// .social {
-//     display: flex;
-
-//     &__item {
-        
-//     }
-//     &__icon {
-//         // width: 27px;
-//         // height: 27px;
-//     }
-// }
+}

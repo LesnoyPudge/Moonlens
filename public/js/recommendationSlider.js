@@ -6,6 +6,11 @@ export function sliderInit() {
 
         speed: 600,
         loop: true,
+        autoplay: {
+            delay: 3000,
+        },
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       
         // If we need pagination
         pagination: {

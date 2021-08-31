@@ -2,7 +2,6 @@ import {modalOpen, modalClose} from './modal.js';
 
 let modalWindow = document.querySelector('#video-modal');
 let modalBox = modalWindow.querySelector('#video-box');
-let wrapper = modalWindow.querySelector('[class$=__wrapper]');
 
 export function recommendationModalOpen(videoSrc) {
 
@@ -20,10 +19,16 @@ export function recommendationModalOpen(videoSrc) {
 
     modalOpen(modalWindow);
 
-    wrapper.addEventListener('click', recommendationModalClose);
+    modalWindow.addEventListener('click', clickCheck);
 }
 
 function recommendationModalClose() {
     modalClose(modalWindow);
     modalBox.querySelector('iframe').remove();
+}
+
+function clickCheck(event) {
+    if (event.target.closest('.modal-close') || event.target.className == 'modal__wrapper') {
+        recommendationModalClose();
+    } 
 }

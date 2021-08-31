@@ -173,12 +173,13 @@ export function init() {
         myMap.balloon.close();
     });
 
-    // При нажатии на кнопку "Записаться на приём" вызываем modalOpen
+    // При нажатии на кнопку "Записаться на приём" вызываем orderModalOpen
     map.addEventListener('click', (e) => {
         if (e.target.id != 'order-button') return;
 
         let objectId = e.target.dataset.clinicId;
         let geoObject = objectManager.objects.getById(objectId);
+        console.log(geoObject);
         orderModalOpen(geoObject);
     });
 

@@ -5,8 +5,8 @@
     line-height: 2.4rem;
 
     &__content {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
         margin: 25px 0;
         justify-content: space-between;
         align-items: center;
@@ -41,5 +41,27 @@
         cursor: pointer;
         text-decoration: underline white 1px;
         text-underline-offset: 3px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+    .footer {
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+}
+@media (max-width: 576px) {
+    .footer {
+        &__content {
+            gap: 10px;
+        }
     }
 }

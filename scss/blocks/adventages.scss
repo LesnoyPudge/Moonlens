@@ -5,21 +5,46 @@
     text-align: start;
     margin-bottom: 100px;
 
-    &__item {}
+    &__item {
+        display: grid;
+        gap: 12px;
+        grid-template-rows: auto auto 1fr;
+        // align-items: center;
+    }
     &__image {
-        display: flex;
         height: 100px;
-        margin-bottom: 12px;
     }
     &__title {
         font-size: 2.8rem;
         line-height: 2.8rem;
         font-weight: 700;
-        margin-bottom: 12px;
     }
     &__text {
         font-size: 1.7rem;
         line-height: 2.2rem;
-        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+    .advantages {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+    .advantages {
+        margin-bottom: 30px;
+        
+        &__title {
+            font-size: 2.1rem;
+        }
     }
 }
