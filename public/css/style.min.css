@@ -528,6 +528,9 @@ a {
   color: #fff; }
   .navbar__logo {
     height: 37px; }
+  .navbar__social {
+    display: flex;
+    gap: 3px; }
   .navbar__social-icon {
     width: 34px;
     height: 34px;
@@ -536,6 +539,43 @@ a {
     .navbar__social-icon:hover {
       fill: #0066D9;
       transform: scale(1.1); }
+  .navbar[data-state=open] {
+    display: grid;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    gap: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 999;
+    grid-template: [header-left] "logo burger" auto [header-right] [main-left] "nav nav" auto [main-right] [footer-left] "social social" auto [footer-right]/1fr; }
+    .navbar[data-state=open] .burger__bar {
+      background-color: transparent; }
+    .navbar[data-state=open] .burger__bar::before {
+      top: 0;
+      transform: rotate(45deg); }
+    .navbar[data-state=open] .burger__bar::after {
+      top: 0;
+      transform: rotate(-45deg); }
+    .navbar[data-state=open] .navbar__logo {
+      grid-area: logo; }
+    .navbar[data-state=open] .navbar__burger {
+      grid-area: burger; }
+    .navbar[data-state=open] .navbar__nav {
+      grid-area: nav; }
+    .navbar[data-state=open] .navbar__social {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      grid-area: social; }
+    .navbar[data-state=open] .nav {
+      opacity: 1;
+      visibility: visible;
+      height: auto; }
 
 .nav {
   display: flex;
@@ -546,15 +586,53 @@ a {
     opacity: 0.7;
     transition: 0.1s linear; }
     .nav__item:hover {
-      opacity: 1; }
+      opacity: 1;
+      transform: scale(1.1); }
+
+.burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  transition: 0.2s linear;
+  cursor: pointer;
+  background-color: transparent; }
+  .burger:hover {
+    transform: scale(1.1); }
+  .burger__bar, .burger__bar::before, .burger__bar::after {
+    width: 100%;
+    content: "";
+    background-color: white;
+    height: 5px;
+    border-radius: 5px; }
+  .burger__bar::before, .burger__bar::after {
+    position: absolute;
+    left: 0;
+    transition: 0.2s linear; }
+  .burger__bar {
+    position: relative;
+    transition: 0.1s linear; }
+  .burger__bar::before {
+    top: -12px; }
+  .burger__bar::after {
+    top: 12px; }
 
 @media (max-width: 992px) {
   .header__navbar {
     padding-bottom: 50px; }
-  .navbar__nav {
-    display: none; }
   .navbar__social {
-    display: none; } }
+    opacity: 0;
+    visibility: hidden;
+    height: 0; }
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+    height: 0; }
+  .burger {
+    display: flex; } }
 
 .intro {
   color: #fff; }
@@ -1337,10 +1415,12 @@ a {
     border-radius: 16px;
     padding: 20px 14px 0px 14px;
     gap: 20px; }
-    .questions__item[data-state=open] .questions__text {
-      opacity: 1; }
-    .questions__item[data-state=open] .questions__icon {
-      fill: #0066D9; }
+    .questions__item[data-state=open] {
+      padding-bottom: 20px; }
+      .questions__item[data-state=open] .questions__text {
+        opacity: 1; }
+      .questions__item[data-state=open] .questions__icon {
+        fill: #0066D9; }
   .questions__icon {
     fill: #153862;
     height: 33px;
@@ -1479,6 +1559,7 @@ a {
   box-shadow: 0px 5px 30px rgba(9, 32, 39, 0.12);
   border-radius: 20px;
   padding: 44px 38px;
+  margin-left: 30px;
   opacity: 0.5;
   transition: 0.3s; }
   .search__title {
@@ -1623,7 +1704,8 @@ a {
     transform: none;
     max-width: none;
     box-shadow: none;
-    margin-bottom: 10px; } }
+    margin-bottom: 10px;
+    margin-left: 0; } }
 
 @media (max-width: 576px) {
   .search {
@@ -1716,7 +1798,7 @@ a {
     overflow-y: auto;
     padding: 30px; }
   .modal__content {
-    transform: scale(0.1);
+    transform: scale(0);
     transition: 0.2s linear;
     width: fit-content;
     height: fit-content;

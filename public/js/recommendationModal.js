@@ -9,8 +9,8 @@ export function recommendationModalOpen(videoSrc) {
         let iframe = document.createElement('iframe');
         // Добавить зависимость размеров от размера окна браузера
         iframe.src = videoSrc;
-        iframe.height = 480;
-        iframe.width = 854;
+        iframe.width = window.innerWidth * 0.8;
+        iframe.height = iframe.width * (9/16);
         iframe.allow = `accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture`;
         iframe.allowFullscreen = true;
 

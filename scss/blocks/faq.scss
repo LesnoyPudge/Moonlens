@@ -41,6 +41,8 @@
         gap: 20px;
 
         &[data-state=open] {
+            padding-bottom: 20px;
+            
             .questions__text {
                 opacity: 1;
             }

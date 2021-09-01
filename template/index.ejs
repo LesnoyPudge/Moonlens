@@ -20,7 +20,7 @@
                 </p>
     
                 <div class="intro__buttons">
-                    <button type="button" data-scroll="#map" class="intro__clinic-choose-button 
+                    <button type="button" data-scroll="#search" class="intro__clinic-choose-button 
                     clinic-choose-button button fade-in-animation animation-duration-5">
                         Выбрать клинику
                     </button>
@@ -463,7 +463,7 @@
                     </li>
                 </ul>
 
-                <button type="button"  data-scroll="#map" class="professionals-clinic-choose-button 
+                <button type="button"  data-scroll="#search" class="professionals-clinic-choose-button 
                 clinic-choose-button button slide-up-animation animation-delay-3">
                     Выбрать клинику
                 </button>
@@ -479,7 +479,7 @@
             <div class="recommendation__slider swiper">
                 <div class="swiper-wrapper">
                     <div class="slider-item swiper-slide">
-                        <div class="slider-item__content slide-right-animation animation-delay-2">
+                        <div class="slider-item__content">
                             <span class="slider-item__bg-circle bg-circle"></span>
                             <div class="slider-item__header">
                                 <picture class="slider-item__image">
@@ -504,13 +504,13 @@
                             </p>
                         </div>
     
-                        <div class="slider-item__video video slide-left-animation animation-delay-2">
+                        <div class="slider-item__video video">
                             <picture class="video__image">
                                 <source srcset="images/video__image1.webp" type="image/webp">
                                 <img src="images/video__image1.png" alt="video__image1" class="">
                             </picture>
                             <div class="video__content">                               
-                                <svg class="video__video-play-button video-play-button" id="video-play-button" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                                <svg class="video__video-play-button video-play-button" id="video-play-button" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1">
                                     <use xlink:href="#play-button"></use>
                                 </svg>
                                 <div class="video__name">
@@ -557,7 +557,8 @@
                                 <img src="images/video__image1.png" alt="video__image1" class="">
                             </picture>
                             <div class="video__content">                               
-                                <svg class="video__video-play-button video-play-button" id="video-play-button" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                                <svg class="video__video-play-button video-play-button" id="video-play-button" 
+                                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1">
                                     <use xlink:href="#play-button"></use>
                                 </svg>
                                 <div class="video__name">
@@ -604,7 +605,8 @@
                                 <img src="images/video__image1.png" alt="video__image1" class="">
                             </picture>
                             <div class="video__content">                               
-                                <svg class="video__video-play-button video-play-button" id="video-play-button" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                                <svg class="video__video-play-button video-play-button" id="video-play-button" 
+                                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1">
                                     <use xlink:href="#play-button"></use>
                                 </svg>
                                 <div class="video__name">
@@ -804,7 +806,7 @@
 
     <section class="map">
         <div class="container">
-            <div class="map__search search">
+            <div class="map__search search" id="search">
                 <h3 class="search__title section-title">
                     Выберите клинику и запишитесь на приём:
                 </h3>
@@ -813,7 +815,7 @@
         
                         <!-- Начало селектов -->
         
-                        <div class="country-select" id="country-select" data-state="close">
+                        <div class="country-select" id="country-select" data-state="close" data-value="">
                             <div class="country-select__title">
                                 <svg class="select-icon">
                                     <use xlink:href="#select-icon"></use>
@@ -829,7 +831,7 @@
                             </ul>
                         </div>
         
-                        <div class="city-select" id="city-select" data-state="close">
+                        <div class="city-select" id="city-select" data-state="close" data-state="close" data-value="">
                             <div class="city-select__title">
                                 <svg class="select-icon">
                                     <use xlink:href="#select-icon"></use>

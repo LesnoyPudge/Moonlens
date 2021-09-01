@@ -27,7 +27,7 @@ export function faqInit() {
             itemText.style.height = itemText.scrollHeight + 'px';
         } else {
             itemText.style.height = '';
-        };
+        }
     });
 
 }

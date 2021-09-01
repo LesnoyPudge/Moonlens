@@ -10,20 +10,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     color: $font-secondary--theme--light;
 
     &__logo {
         height: 37px;
     }
-    &__nav {
-
-    }
-    &__language {
-
-    }
+    &__nav {}
+    &__language {}
     &__social {
-
+        display: flex;
+        gap: 3px;
     }
     &__social-icon {
         width: 34px;
@@ -34,6 +30,72 @@
         &:hover {
             fill: #0066D9;
             transform: scale(1.1);
+        }
+    }
+    &__burger {}
+
+    &[data-state=open] {
+        display: grid;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        background-color: rgba(0,0,0, 0.95);
+        // padding: 0;
+        gap: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        // align-items: center;
+        z-index: 999;
+        grid-template:
+            [header-left] "logo burger" auto [header-right]
+            [main-left] "nav nav" auto [main-right]
+            [footer-left] "social social" auto [footer-right] / 1fr;
+
+        .burger {
+            &__bar {
+                background-color: transparent;
+            }
+            &__bar::before {
+                top: 0;
+                transform: rotate(45deg);
+            }
+            &__bar::after {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+        }
+        .navbar {
+            &__logo {
+                grid-area: logo;
+            }
+
+            &__burger {
+                grid-area: burger;
+            }
+
+            &__nav {
+                grid-area: nav;
+            }
+
+            &__social {
+                opacity: 1;
+                visibility: visible;
+                height: auto;
+                grid-area: social;
+            }
+        }
+        .nav {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            // display: flex;
+            // position: absolute;
+            // flex-direction: column;
+            // gap: 60px;
+            // font-size: 2.6rem;
         }
     }
 }
@@ -50,7 +112,48 @@
 
         &:hover {
             opacity: 1;
+            transform: scale(1.1);
         }
+    }
+}
+
+.burger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: 0.2s linear;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &__bar, &__bar::before, &__bar::after {
+        width: 100%;
+        content: "";
+        background-color: white;
+        height: 5px;
+        border-radius: 5px;
+    }
+    &__bar::before, &__bar::after {
+        position: absolute;
+        left: 0;
+        transition: 0.2s linear;
+    }
+    &__bar {
+        position: relative;
+        transition: 0.1s linear;
+    }
+    &__bar::before {
+        top: -12px;
+    }
+    &__bar::after {
+        top: 12px;
     }
 }
 
@@ -64,12 +167,19 @@
         }
     }
     .navbar {
-        &__nav {
-            display: none;
-        }
         &__social {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
         }
+    }
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+    }
+    .burger {
+        display: flex;
     }
 }
 @media (max-width: 768px) {

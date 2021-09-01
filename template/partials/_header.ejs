@@ -1,8 +1,8 @@
-<header class="header">
+<header class="header" id="header">
     
     <div class="container">
 
-        <div class="header__navbar navbar">
+        <div class="header__navbar navbar" id="navbar" data-state="">
 
             <a class="navbar__logo" href="#">
                 <picture>
@@ -11,23 +11,12 @@
                 </picture>
             </a>
 
-            <nav class="navbar__nav nav">
+            <nav class="navbar__nav nav" id="nav">
                 <a class="nav__item" href="#" data-scroll="#how-it-works">О линзах MoonLens</a>
                 <a class="nav__item" href="#" data-scroll="#materials">Материалы</a>
                 <a class="nav__item" href="#" data-scroll="#recommendation">Рекомандации</a>
-                <a class="nav__item" href="#" data-scroll="#map">Где купить?</a>
+                <a class="nav__item" href="#" data-scroll="#search">Где купить?</a>
             </nav>
-
-            <!-- <div class="navbar__language language">
-                <picture class="language__icon">
-                    <source srcset="images/RU.webp" type="image/webp">
-                    <img src="images/RU.png" alt="lang-icon">
-                </picture>
-                <select class="language__select">
-                    <option class="language__option" value="1">Русский</option>
-                    <option class="language__option" value="2">English</option>
-                </select>
-            </div> -->
 
             <div class="navbar__social social">
                 <a href="#" class="social__item" target="_blank">
@@ -60,6 +49,10 @@
                         <use xlink:href="#instagramm"></use>
                     </svg>
                 </a>
+            </div>
+
+            <div class="navbar__burger burger" type="button" data-state="close" id="burger">
+                <span class="burger__bar"></span>
             </div>
 
         </div>

@@ -5,6 +5,9 @@ import {recommendationInit} from './recommendtion.js';
 import {howItWorksModalInit} from './howItWorksModal.js';
 import {pageScrollInit} from './pageScroll.js';
 import {scrollAnimationInit} from './scrollAnimation.js';
+import {burgerMenuInit} from './burgerMenu.js';
+
+burgerMenuInit();
 
 scrollAnimationInit();
 

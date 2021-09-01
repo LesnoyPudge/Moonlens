@@ -15,9 +15,6 @@ function howItWorksModalOpen() {
 }
 
 function clickCheck(event) {
-    console.log(event.target);
-    console.log(event.target.closest('[class$=__wrapper]'))
-    console.log(event.target == '.modal-close')
     if (event.target.closest('.modal-close') || event.target.className == 'modal__wrapper') {
         modalClose(modalWindow);
     } 

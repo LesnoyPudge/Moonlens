@@ -28,14 +28,15 @@ export function searchBoxInit() {
                 return;
             } else {
                 currentSelect = citySelect;
-            };
+            }
         } else {
             currentSelect = countrySelect;
-        };
+        }
       
         // Меняем состояние селекта
         toggleState(currentSelect);
         setHeight(currentSelect);
+        
         // Если кликнули на страну/город 
         if (e.target.hasAttribute('data-checked')) {
     
@@ -51,7 +52,7 @@ export function searchBoxInit() {
             if (currentSelect == citySelect) {
                 getClinicList(selectedTarget);
             }
-        };
+        }
     });
 }
 
@@ -67,7 +68,7 @@ export function toggleState(currentSelect) {
         currentSelect.dataset.state = 'open';
     } else {
         currentSelect.dataset.state = 'close';
-    };
+    }
 }
 
 function setHeight(currentSelect) {
@@ -85,7 +86,7 @@ function setHeight(currentSelect) {
         currentSelect.querySelector('[class$="__content"]').style.height = '0px'; 
     } else {
         currentSelect.querySelector('[class$="__content"]').style.height = contentHeight + collection.length + 'px';
-    };
+    }
 }
 
 function setOption(currentSelect, selectedTarget) {
@@ -95,6 +96,9 @@ function setOption(currentSelect, selectedTarget) {
 
     // Устанавливаем заголовок
     currentSelect.querySelector('.select-text').innerText = selectedTarget.innerText;
+
+    // Устанавливаем id выбранной опции
+    currentSelect.dataset.value = selectedTarget.dataset.value;
 }
 
 
@@ -115,7 +119,10 @@ async function setCity(selectedTarget) {
         // Удаляем текущие города и, в зависимости от выбранной страны, загружаем список городов
         setOption(citySelect, citySelect.querySelector('[data-value="0"]'));
         await getCityList(dataValue);
-    };
+
+        //
+        getClinicList(selectedTarget)
+    }
     setHeight(citySelect); 
 }
 
@@ -125,7 +132,7 @@ async function getCountryList() {
     if (!response.ok) {
         console.log("Ошибка HTTP: " + response.status);
         return;
-    };
+    }
     let countries = await response.json();
 
     let countryContainer;
@@ -156,7 +163,7 @@ async function getCityList(countryId) {
     if (!response.ok) {
         console.log("Ошибка HTTP: " + response.status);
         return;
-    };
+    }
     let cities = await response.json();
 
     // Очищаем список городов, что-бы убрать мерцание опций
@@ -171,22 +178,73 @@ async function getCityList(countryId) {
 
 async function getClinicList(selectedTarget) {
     let dataValue = selectedTarget.dataset.value;
-
+    // console.log(selectedTarget);
     if (!dataValue || dataValue == '') return;
     
     // cleanOutput
     cleanList(Array.from(output.children));
-    switch (dataValue) {
-        case '0':
-            reqBody = {};
-            break;
-        
-        default:
-            reqBody = {
-                dataValue
-            };
-            break;
-    };
+    let isCountry = true;
+
+
+    // Вывод списка всех клиник при первой инициализации карты
+    if (selectedTarget.className.includes('city') && !countrySelect.dataset.value) {
+        switch (dataValue) {
+            case '0':
+                reqBody = {};
+                break;
+            
+            default:
+                reqBody = {
+                    dataValue
+                };
+                break;
+        }
+    // Если выбранной опцией был город при уже установленной стране
+    } else if (selectedTarget.className.includes('city') && countrySelect.dataset.value != '0') {
+        switch (dataValue) {
+            case '0':
+                // При выборе опции "Все города" меняем dataValue на id страны
+                // и добавляем параметр isCountry, из за чего выборка будет из стран, а не городов
+                dataValue = countrySelect.dataset.value;
+                reqBody = {
+                    dataValue,
+                    isCountry
+                };
+                break;
+            
+            default:
+                reqBody = {
+                    dataValue,
+                };
+                break;
+        }
+    // Если выбранной опцией был город (все города), но страна не выбрана
+    } else if (selectedTarget.className.includes('city') && countrySelect.dataset.value == '0') {
+        switch (dataValue) {
+            case '0':
+                reqBody = {};
+                break;
+            
+            default:
+                break;
+        }
+
+    // Если выбранной опцией была страна
+    } else if (selectedTarget.className.includes('country')) {
+        switch (dataValue) {
+            case '0':
+                return;
+            
+            default:
+                reqBody = {
+                    dataValue,
+                    isCountry
+                };
+                break;
+        }
+    }
+    
+
     // console.log('dataValue: ', dataValue);
     // console.log('reqBody: ', reqBody);
     let response = await fetch('/getClinicList', {
@@ -202,25 +260,12 @@ async function getClinicList(selectedTarget) {
     if (!response.ok) {
         console.log("Ошибка HTTP: " + response.status);
         return;
-    };
+    }
 
     let clinicList = await response.json();
     
     let clinicContainer;
     let counter = 1;
-    if (!clinicList.length) {
-        clinicContainer = `
-        <li class='output__item' data-id='${clinicList._id}' data-checked>
-            <div class='output__name'>${counter}. <b>${clinicList.clinic_name}</b></div>
-            <address class='output__address'>${clinicList.clinic_address}</address>
-            <div class='output__email'>${clinicList.clinic_email}</div>
-            <div class='output__site'>${clinicList.clinic_site}</div>
-            <div class='output__phone'>${clinicList.clinic_phone}</div>
-        </li>
-        `;
-        output.insertAdjacentHTML('beforeend', clinicContainer);
-        return;
-    };
 
     clinicList.forEach(clinic => {
         clinicContainer = `
@@ -243,8 +288,8 @@ export function setCheck(currentSelect, selectedTarget) {
         let targetToUncheck = currentSelect.querySelector('[data-checked=true]');
         if (targetToUncheck) {
             targetToUncheck.dataset.checked = '';
-        };
-    };
+        }
+    }
     selectedTarget.dataset.checked = 'true';
 }
 

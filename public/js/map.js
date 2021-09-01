@@ -144,13 +144,7 @@ export function init() {
         toggleState(document.getElementById(objectId));
 
         // Загрузим данные для балуна
-        downloadContent([geoObject], objectId).then(() => {
-            // Добавляем обработчик для кнопки "Записаться на приём"
-            // modalInit([geoObject], objectId);
-            // map.addEventListener('click', handler);
-        });
-
-        
+        downloadContent([geoObject], objectId);
     });
 
     objectManager.objects.events.add('balloonclose', (e) => {
@@ -179,8 +173,29 @@ export function init() {
 
         let objectId = e.target.dataset.clinicId;
         let geoObject = objectManager.objects.getById(objectId);
-        console.log(geoObject);
+        // console.log(geoObject);
         orderModalOpen(geoObject);
+    });
+
+    // Обрабатываем клики по элементам в поле вывода клиник
+    output.addEventListener('click', (e) => {
+        
+        if (!e.target.closest('[class$=item]')) return;
+        console.log('тык') 
+        let selectedTarget = e.target.closest('[class$=item]');
+        let clinicId = selectedTarget.dataset.id;
+        let clinicCoords = getCordsById(clinicId);
+
+        setCheck(output, selectedTarget);
+
+        // Перемещаем карты на координаты клиники
+        myMap.setCenter(clinicCoords);
+        myMap.setZoom(11);
+        myMap.panTo(clinicCoords, {
+            delay: 0,
+            flying: false
+        });
+        objectManager.objects.balloon.open(clinicId);
     });
 
 
@@ -265,28 +280,6 @@ export function init() {
     //         objectManager.add(response);
     //     });
     
-
-    // Обрабатываем клики по элементам в поле вывода клиник
-    output.addEventListener('click', (e) => {
-        
-        if (!e.target.closest('[class$=item]')) return;
-    
-        let selectedTarget = e.target.closest('[class$=item]');
-        let clinicId = selectedTarget.dataset.id;
-        let clinicCoords = getCordsById(clinicId);
-
-        setCheck(output, selectedTarget);
-
-        // Перемещаем карты на координаты клиники
-        myMap.setCenter(clinicCoords);
-        myMap.setZoom(11);
-        myMap.panTo(clinicCoords, {
-            delay: 0,
-            flying: false
-        }).then(() => {
-            objectManager.objects.balloon.open(clinicId);
-        });
-    });
     
     function getCordsById(id) {
         return objectManager.objects._objectsById[id].geometry.coordinates;

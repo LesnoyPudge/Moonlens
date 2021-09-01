@@ -8,7 +8,7 @@ let fieldsList = orderForm.querySelectorAll('.outlined-input');
 
 export function orderModalOpen(geoObject) {
     modalOpen(modalWindow);
-    console.log(geoObject);
+    // console.log(geoObject);
     orderForm.querySelector('[name=clinic-name]').value = geoObject.properties.clinic_name;
     orderForm.querySelector('[name=clinic-city]').value = geoObject.properties.country_name + ', ' + geoObject.properties.city_name;
 

@@ -6,7 +6,7 @@ export function modalOpen(modalWindow) {
         
 
         // Добавляем отступ шириной равной ширине скролла
-        console.log(`${window.innerWidth} - ${document.body.clientWidth}`)
+        // console.log(`${window.innerWidth} - ${document.body.clientWidth}`)
 
         document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + 'px';
         document.body.style.overflow = 'hidden';
@@ -15,6 +15,8 @@ export function modalOpen(modalWindow) {
 }
 
 export function modalClose(modalWindow) {
+    if (modalWindow.dataset.state == 'close') return;
+    
     document.body.style.overflow = '';
     document.body.style.paddingRight = '';
 
