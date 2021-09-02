@@ -2,10 +2,10 @@ import {burgerMenuClose} from './burgerMenu.js';
 
 export function pageScrollInit() {
     document.addEventListener('click', (e) => {
-        if (!e.target.dataset.scroll) return;
+        if (!e.target.closest('[data-scroll]')) return;
         e.preventDefault();
 
-        let target = document.querySelector(e.target.dataset.scroll);
+        let target = document.querySelector(e.target.closest('[data-scroll]').dataset.scroll);
 
         burgerMenuClose();
 

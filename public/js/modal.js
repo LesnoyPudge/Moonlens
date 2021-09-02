@@ -8,19 +8,39 @@ export function modalOpen(modalWindow) {
         // Добавляем отступ шириной равной ширине скролла
         // console.log(`${window.innerWidth} - ${document.body.clientWidth}`)
 
-        document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + 'px';
-        document.body.style.overflow = 'hidden';
+        windowLock();
         toggleState(modalWindow);
     }
 }
 
 export function modalClose(modalWindow) {
     if (modalWindow.dataset.state == 'close') return;
-    
-    document.body.style.overflow = '';
-    document.body.style.paddingRight = '';
-
+    windowLock();
     toggleState(modalWindow);
+}
+
+export function windowLock() {
+    if (document.body.style.paddingRight && document.body.style.overflow) {
+        scrollPadding();
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    } else {
+        scrollPadding();
+        document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + 'px';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function scrollPadding() {
+    let itemList = document.querySelectorAll('.scroll-padding');
+    itemList.forEach((item) => {
+        if (item.style.paddingRight) {
+            item.style.paddingRight = '';
+        } else {
+            // Расчитываем паддинг элемента и добавляем к нему ширину скролла
+            item.style.paddingRight = +(getComputedStyle(item).paddingRight.slice(0,-2)) + window.innerWidth - document.body.clientWidth + 'px';
+        }
+    });
 }
 
 export function emptyFieldsValidate(modalWindow, modalBox, fields) {
