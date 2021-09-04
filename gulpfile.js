@@ -2,31 +2,30 @@ const { src, dest, watch, parallel, series } = require('gulp');
 const gulp = require("gulp");
 // const browserSync = require('browser-sync').create();
 const del = require('del');
-// const autoprefixer = require('gulp-autoprefixer');
+const autoprefixer = require('gulp-autoprefixer');
 const scss = require('gulp-sass');
 const concat = require('gulp-concat');
-// const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
-// const uglify = require('gulp-uglify-es').default;
+const uglify = require('gulp-uglify-es').default;
 // const fileinclude = require('gulp-file-include');
 // const ts = require('gulp-typescript');
 
 
 // const srcPath = 'src/';
-const srcPath = './';
+const srcPath = './src/';
 // const distPath = 'dist/';
-const distPath = './';
+const distPath = './public/';
 
 const path = {
     build: {
         html: distPath,
         php: distPath,
         js: distPath + "js/",
-        css: distPath + "public/css/",
+        css: distPath + "css/",
         scss: distPath + "scss/",
-        imagesPre: distPath + "imagesPre/",
         fonts: distPath + "fonts/",
-        images: distPath + "public/images"
+        images: distPath + "images/"
     },
     src: {
         html: srcPath + "*.html",
@@ -35,7 +34,7 @@ const path = {
         ts: srcPath + "ts/*.ts",
         css: srcPath + "css/*.css",
         scss: srcPath + "scss/*.scss",
-        imagesPre: srcPath + "imagesPre/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts: srcPath + "fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     watch: {
@@ -46,7 +45,7 @@ const path = {
         ts: srcPath + "ts/**/*.ts",
         css: srcPath + "css/**/*.css",
         scss: srcPath + "scss/**/*.scss",
-        images: srcPath + "imagesPre/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts: srcPath + "fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     clean: "./" + distPath
@@ -61,40 +60,62 @@ const path = {
 //     });
 // }
 
-// function html() {
-//     return src([
-//         path.src.html, 
-//         '!src/_*.html'
-//     ])
-//         //.pipe(dest(srcPath))
-//         .pipe(fileinclude({
-//             prefix: '@@',
-//             basepath: '@file'
-//         }))
-//         .pipe(dest(path.build.html))
-//         .pipe(browserSync.stream())
-// }
+// Production begin
 
-// function php() {
-//     return src(path.src.php)
-//         .pipe(dest(path.build.php))
-//         .pipe(browserSync.stream())
-// }
+function css() {
+    return src(
+        ['node_modules/normalize.css/normalize.css',
+         path.src.scss
+        ])
+        .pipe(scss({ outputStyle: 'compressed' }))
+        .pipe(concat('style.min.css'))
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 10 version'],
+            grid: true
+        }))
+        .pipe(dest(path.build.css))
+        // .pipe(browserSync.stream())
+}
 
-// function css() {
-//     return src(
-//         ['node_modules/normalize.css/normalize.css',
-//          path.src.scss
-//         ])
-//         .pipe(scss({ outputStyle: 'compressed' }))
-//         .pipe(concat('style.min.css'))
-//         .pipe(autoprefixer({
-//             overrideBrowserslist: ['last 10 version'],
-//             grid: true
-//         }))
-//         .pipe(dest(path.build.css))
-//         .pipe(browserSync.stream())
-// }
+function js() {
+    return src(path.src.js)
+        // .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(dest(path.build.js))
+}
+
+function images() {
+    return src(path.src.images)
+        .pipe(imagemin([
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.mozjpeg({ quality: 95, progressive: true }),
+            imagemin.optipng({ optimizationLevel: 5 }),
+            imagemin.svgo({
+                plugins: [
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
+                ]
+            }),
+        ]))
+        .pipe(dest(path.build.images))
+        .pipe(
+            webp({
+                quality: 70
+            })
+        )
+        .pipe(dest(path.build.images))
+}
+
+function fonts() {
+    return src(path.src.fonts)
+        .pipe(dest(path.build.fonts))
+}
+
+function cleanDist() {
+    return del(distPath);
+}
+
+// Production end
 
 function cssMin() {
     return src([
@@ -151,10 +172,6 @@ function imagesMin() {
         // .pipe(browserSync.reload({ stream: true }));
 }
 
-// function cleanDist() {
-//     return del(distPath);
-// }
-
 function watchFiles() {
     // watch(path.watch.html, html);
     // watch(path.watch.php, php);
@@ -168,12 +185,12 @@ function watchFiles() {
 
 // exports.html = html;
 // exports.php = php;
-// exports.css = css;
-// exports.js = js;
-// exports.images = images;
-// exports.fonts = fonts;
+exports.css = css;
+exports.js = js;
+exports.images = images;
+exports.fonts = fonts;
 exports.watchFiles = watchFiles;
-// exports.cleanDist = cleanDist;
+exports.cleanDist = cleanDist;
 
-// exports.build = series(cleanDist, html, css, images, tsTransform, js, fonts, build);
+exports.build = series(cleanDist, fonts, css, js, images);
 exports.default = series(cssMin, imagesMin, parallel(watchFiles));

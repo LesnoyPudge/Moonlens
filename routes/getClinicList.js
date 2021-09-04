@@ -6,16 +6,14 @@ export async function getClinicList(body) {
     let result;
     let clinics = [];
     let clinicData = {};
-    // console.log(body)
+
     if (body.dataValue == undefined) {
         filter =  {};
         let projection = 'cities.clinics';
         let options = {};
 
         const doc = await MoonlensData.find(filter, projection, options).lean();
-        // console.log('Got body: ', body);
-        // console.log('Raw output: ', doc)
-        
+
         for (let countryCount = 0; countryCount < doc.length; countryCount++) {
             for (let cityCount = 0; cityCount < doc[countryCount].cities.length; cityCount++) {
                 for (let clinicCount = 0; clinicCount < doc[0].cities[0].clinics.length; clinicCount++) {
@@ -62,7 +60,6 @@ export async function getClinicList(body) {
                 }
             }
         }
-        // console.log(JSON.stringify(clinicData));
         result = JSON.stringify(clinics);
 
     } else if (body.isCountry) {
@@ -72,10 +69,7 @@ export async function getClinicList(body) {
         let options = {};
 
         const doc = await MoonlensData.find(filter, projection, options).lean();
-        // console.log('Got body: ', body);
-        // console.log('Raw output: ', doc)
-        // console.log('все клиники из страны')
-        
+
         for (let countryCount = 0; countryCount < doc.length; countryCount++) {
             for (let cityCount = 0; cityCount < doc[countryCount].cities.length; cityCount++) {
                 for (let clinicCount = 0; clinicCount < doc[0].cities[0].clinics.length; clinicCount++) {
@@ -93,12 +87,8 @@ export async function getClinicList(body) {
                 }
             }
         }
-        // console.log(JSON.stringify(clinics));
         result = JSON.stringify(clinics);
     }
-    // console.log('filter: ', filter);
-    
-    // console.log(result);
     return result;
 }
 

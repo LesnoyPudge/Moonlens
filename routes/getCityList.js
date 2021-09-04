@@ -4,7 +4,6 @@ export async function getCityList(body) {
     let filter =  { _id: body.countryId };
     let projection = 'cities._id cities.city_name';
     let options = {};
-    // console.log('body.qwe: ', body);
     const doc = await MoonlensData.find(filter, projection, options).lean();
 
     let cities = [];

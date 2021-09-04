@@ -6,15 +6,6 @@ export async function getClinicCoords() {
     let options = {};
 
     const doc = await MoonlensData.find(filter, projection, options).lean();
-    // console.log(`stringify: ${JSON.stringify(doc)}`);
-    // console.log(`clinic_id: ${doc[0].cities[0].clinics[0]._id}`);
-    // console.log(`clinic_coords: ${doc[0].cities[0].clinics[0].clinic_coords}`);
-    // console.log(`cities.length: ${doc[0].cities.length}`);
-    // console.log(`doc.length: ${doc.length}`);
-    // console.log(`clinics.length: ${doc[0].cities[0].clinics.length}`);
-
-    // const len = MoonlensData.find().length();
-    // console.log(`длина всего: ${len}`);
 
     let clinics = [];
 
@@ -54,9 +45,9 @@ export async function getClinicCoords() {
                     },
                 };
                 clinics.push(clinicData);
-            };
-        };
-    };
+            }
+        }
+    }
 
     let result = {
         'type': 'FeatureCollection',

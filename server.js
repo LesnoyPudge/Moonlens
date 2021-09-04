@@ -1,25 +1,19 @@
 import express from 'express';
 import path from 'path';
-// import http from 'http';
-// import fs from 'fs';
-// import url from 'url';
 import mongoose from 'mongoose';
 import engine from 'ejs-locals';
 import bodyParser from 'body-parser';
-
-// import Country from './models/MoonlensData.js';
 import config from './config/config.js'
-// import {requestTime, logger} from './public/js/middlewares.js';
 import router from './routes/router.js';
+import compression from 'compression';
 
-
-
-
-
-const PORT = process.env.PORT || config.get('port');
-const hostname = '127.0.0.1';
+// const PORT = process.env.PORT || config.get('port');
+// const hostname = '127.0.0.1';
+const hostname = '194.58.100.129';
+const PORT = process.env.PORT || 80;
 const app = express();
 
+app.use(compression());
 app.use(bodyParser.json() );
 app.use(bodyParser.urlencoded({extended: true})); 
 app.engine('ejs', engine);
@@ -28,13 +22,8 @@ app.set('views', path.resolve('./template'));
 
 
 app.use(express.static(path.resolve('./public')));
-// app.use(requestTime);
-// app.use(logger);
 app.use(router);
 
-// app.get('/', (req, res) => {
-//     res.render('index', {title: 'Main page', active: 'main'});
-// });
 
 async function start() {
     try {
@@ -55,10 +44,4 @@ async function start() {
 }
 
 start();
-
-// app.get('/download', (req, res) => {
-//     console.log(req.requestTime);
-//     res.download(path.resolve('dist/', 'index.html'));
-// });
-
 

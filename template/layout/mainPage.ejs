@@ -12,16 +12,8 @@
     <meta name="google" content="notranslate">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="">
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="css/style.min.css">
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=f5b2d81d-5ae7-481a-b579-2652aeefeac8&lang=ru_RU"
-        type="text/javascript">
-        </script>
-    
+    <link rel="stylesheet" rel=preconnect href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.min.css"> 
 </head>
 <body>
     <%- partial('../partials/_header') %>
@@ -30,8 +22,13 @@
     <%- partial('../partials/_footer') %>
     <%- partial('../partials/_modal') %>
 
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script type="module" src="js/main.js"></script>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js" async></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=f5b2d81d-5ae7-481a-b579-2652aeefeac8&lang=ru_RU"
+        type="text/javascript" async>
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script>
 </body>
 
 </html>
